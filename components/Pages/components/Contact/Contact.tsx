@@ -5,6 +5,7 @@ import {Side1Warper} from '../Side1/Side1';
 import {Side2Warper} from '../SIde2/Side2';
 import ContactImg from '../../../../assets/contact.jpg';
 import ContactMap from '../../../../assets/contactMap.jpg';
+import {Line,ImgContainer,PageContainer} from '../utils/Tools';
 
 const ContactContainer = styled.div`
 
@@ -12,18 +13,6 @@ const ContactContainer = styled.div`
     display: flex;
     justify-content: space-between;
 
-`;
-const ImgContainer = styled.img`
-      width: 100%;
-      height: 483px;
-      box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
-
-  
-
-`;
-const Line = styled.hr`
-   margin-top: 40px;
-   margin-bottom: 40px;
 `;
 const TextContainer = styled.div`
 display: flex;
@@ -61,8 +50,8 @@ const MapImg = styled.img`
 `;
 const  Contact = ()=>{
 
- return   <ContactContainer>
-            <Side1Warper>
+ return    <PageContainer>
+<Side1Warper>
               Contact.
             </Side1Warper>
             <Side2Warper >
@@ -112,7 +101,8 @@ const  Contact = ()=>{
 
         
             </Side2Warper>
-       </ContactContainer>
+ </PageContainer>
+            
      
 
 }

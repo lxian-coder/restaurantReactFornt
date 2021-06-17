@@ -55,16 +55,18 @@ module.exports = {
         ]},
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.html')
         }),
-        new CleanWebpackPlugin(),  // 自动清理改变budle 文件后，多余出来的老文件
+        new CleanWebpackPlugin(),  // 自动清理改变bundle 文件后，多余出来的老文件
     ],
     devServer: {
         contentBase: './dist',  // live server
+        historyApiFallback: true,
       },
 
 }

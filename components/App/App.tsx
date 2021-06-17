@@ -32,17 +32,10 @@ class App extends React.Component<Props,State> {
 
 
     return  <div>
-       <Header dropMenu={dropMenu} toggleDropMenu={this.toggleDropMenu}></Header>
+          <Header dropMenu={dropMenu} toggleDropMenu={this.toggleDropMenu}></Header>
                <Pages></Pages>
               <Footer />
        </div>
-              
-
-    
-            
-             
-    
-  
  }
 }
 export default App;

@@ -16,7 +16,6 @@ export const Side1Warper = styled.aside`
     }
     @media only screen and (max-width: 1200px){
            font-size: 30px;
-    
     }
 `;
 

@@ -30,9 +30,10 @@ const BannerText = styled.div`
     }
   
     @media only screen and (max-width: 425px){
-        width: 550px;
+        width: 510px;
       
     }
+
 `;
 const Text= styled.div`
     color: white ;

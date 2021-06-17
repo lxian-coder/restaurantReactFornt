@@ -12,10 +12,10 @@ export const Side2Warper = styled.aside`
         max-width: 750px;
     }
     @media only screen and (max-width: 826px){
-        max-width: 700px;
+        max-width: 720px;
     }
     @media only screen and (max-width: 726px){
         max-width: 600px;
     }
-         
+
 `;

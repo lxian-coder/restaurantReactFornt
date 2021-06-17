@@ -75,10 +75,8 @@ const Navbar = styled.nav<Props>`
         width: 100%;
         justify-content: center;
         margin-top: 40px;
-       margin-right: 30px;
-       .showMenu{
-           display: flex;
-       }
+      
+ 
     }
        @media only screen and (min-width: 801px){
            display: flex;
@@ -134,9 +132,7 @@ const DisapearWhenSmall = styled.div`
            display: none;
        }
 `;
-const Input = styled.input`
-  margin-right: ${props=>props.size};
-`;
+
 const ITEMS = [{
     key:'home',
     text:'HOME',
