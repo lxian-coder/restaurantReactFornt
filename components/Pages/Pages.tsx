@@ -3,6 +3,7 @@ import styled,{css} from 'styled-components';
 import CSSCONST from '../../cssConst';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
+import Home from './components/Home/Home';
 import {BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
 
 const PageWarper = styled.div`
@@ -24,9 +25,6 @@ const Pages =()=>{
               <Route path="/" component={Home}></Route>   
         </PageWarper>
             </Switch>
-       
-
-
         </Router>
        
 

@@ -4,8 +4,9 @@ import styled,{css} from 'styled-components';
 
 
 export const Line = styled.hr`
-   margin-top: 40px;
-   margin-bottom: 40px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+  
 `;
 
 
@@ -23,8 +24,15 @@ export const PageContainer = styled.div`
         display: flex;
         justify-content: center;
     }
-
 `;
+
+ export const Iframe = styled.iframe`
+  width: 100%;
+  border: none;
+  height: 500px;
+  box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
+`;
+
 
 
 
