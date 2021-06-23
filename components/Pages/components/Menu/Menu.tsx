@@ -14,13 +14,17 @@ import { MEAL } from '../../../../MEAL';
 import menu1 from '../../../../assets/menu1.png';
 import menu2 from '../../../../assets/menu2.jpg';
 import menu3 from '../../../../assets/menu3.jpg';
-import bottom from '../../../../assets/bottle.jpg';
+import bottle from '../../../../assets/bottle.jpg';
 import glass from '../../../../assets/glass.jpg';
-
 
 interface Props {
   active:string;
+  
 }
+interface Props2{
+  showOrNot:string;
+}
+
 const CATEGORY = [{
   key:'Breakfast',
   value:"breakfast",
@@ -146,9 +150,19 @@ position: absolute;
 top: 91%;
 left: 45%;
 `;
+const CategoryBottleWarper = styled.div<Props2>`
+display: ${p=>p.showOrNot};
+justify-content: space-between;
+`;
 
-const BottleWraper = styled.img`
-
+const BottleGlassWarper = styled.div`
+display: flex;
+justify-content: space-between;
+`;
+const BottleWarper = styled.img`
+  width: 30px;
+  height: 35px;
+  margin-left: 17px;
 `;
 
 
@@ -214,13 +228,21 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
                </Side1Warper>
                <Side2Warper >
                  <MenuSide2Warper>
-                 <Img1Wraper src={menu1}></Img1Wraper>
+                   <Img1Wraper src={menu1}></Img1Wraper>
                    <Img2Wraper src={menu2}></Img2Wraper>
-                  <Img3Wraper src={menu3}></Img3Wraper>
+                   <Img3Wraper src={menu3}></Img3Wraper>
 
                  {CATEGORY.map(({key,value})=>{
                   return  <UL>
-                           <Category id={key} >{key}</Category>
+                          <CategoryBottleWarper showOrNot={key==="Sparkling & Rose Wine" || key === "White Wine" || key === "Red Wine" ? "flex":"none"}>
+                          <Category id={key} >{key}</Category>
+                          <BottleGlassWarper>
+                              <BottleWarper src={glass}></BottleWarper>
+                              <BottleWarper src={bottle}></BottleWarper>
+                            </BottleGlassWarper>
+                          </CategoryBottleWarper>
+                        
+                           
                             {items.map((ele)=>{
                             if(ele.category === value){
                               return  <LiLine>
