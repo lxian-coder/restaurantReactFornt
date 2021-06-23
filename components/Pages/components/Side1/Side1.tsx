@@ -9,8 +9,11 @@ export const Side1Warper = styled.aside`
           font-size: 48px;
           width: 180px;
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           margin-right: 40px;
+          flex-direction: column;
+       
+
           @media only screen and (max-width: 961px){
            display: none;
     }

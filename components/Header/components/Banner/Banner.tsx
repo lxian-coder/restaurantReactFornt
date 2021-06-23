@@ -1,6 +1,7 @@
 import React from 'react';
 import styled,{css} from 'styled-components';
 import CSSCONST from '../../../../cssConst';
+import {Link} from 'react-router-dom';
 
 const BannerBG = styled.div`
    background-color: ${CSSCONST.BLUE}; 
@@ -11,7 +12,6 @@ const BannerBG = styled.div`
    @media only screen and (max-width: 680px){
         display: flex;
         justify-content: flex-start;
-       
     }
  
 
@@ -47,10 +47,16 @@ const Text= styled.div`
 `;
 
 
-const Banner = ()=>{
+const Banner = (props:{onclick:()=>void})=>{
+ 
     return <BannerBG>
               <BannerText>
-                 <Text>Book a Table</Text>
+                  <Link style={{color:"white"}} to="/ABOUT" >
+                  <Text onClick={(event)=>{
+                      event.preventDefault;
+                      props.onclick()}}>Book a Table</Text>
+                  </Link>
+                
                  <Text>1 Tasman Hwy, Bicheno TAS 7215 / Tel: (03) 6375 1121 </Text>
               </BannerText>
            </BannerBG>

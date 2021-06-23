@@ -27,7 +27,7 @@ const Text = styled.div`
 const About =()=>{
 
     return (<PageContainer>
-               <Side1Warper>About.</Side1Warper>
+               <Side1Warper><div style={{position:'fixed'}}>About.</div></Side1Warper>
               <Side2Warper>
                  <ImgContainer src={img1}></ImgContainer>
                  <Title>The appearance of the Sealife restaurant in the past.</Title>

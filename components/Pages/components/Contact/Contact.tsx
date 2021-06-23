@@ -47,7 +47,7 @@ const  Contact = ()=>{
 
  return    <PageContainer>
 <Side1Warper>
-              Contact.
+        <div style={{position:'fixed'}}>Contact.</div>  
             </Side1Warper>
             <Side2Warper >
                 <ImgContainer src={ContactImg}></ImgContainer>
@@ -91,10 +91,8 @@ const  Contact = ()=>{
                  <GoogleMap  src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.940695511147!2d148.2966295165443!3d-41.87262238471123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaa7142f2f635350d%3A0x29059c694902a1ec!2s1%20Tasman%20Hwy%2C%20Bicheno%20TAS%207215!5e0!3m2!1sen!2sau!4v1623832989408!5m2!1sen!2sau"}>
                  </GoogleMap>
                <Line />
-                 <Iframe src={ContactMap}></Iframe>
+                 <ImgContainer style={{height:"700px"}} src={ContactMap}></ImgContainer>
 
-
-        
             </Side2Warper>
  </PageContainer>
             

@@ -7,6 +7,8 @@ import littleLogo1 from '../../../../assets/littleLogo1.png';
 import littleLogo2 from '../../../../assets/littleLogo2.png';
 import LittleLogo from './components/LittleLogo/LittleLogo';
 import Button from './components/Button/Button';
+import Pages from '../../../Pages/Pages';
+import { PAGE } from '../../../../PAGE';
 
 interface Props {
     show:string;
@@ -42,7 +44,6 @@ const NavBarContainerSpace = styled.div`
      display: flex;
      justify-content: space-between;
 
-   
 `;
 const Logo = styled.img`
    max-width: 182px;
@@ -64,6 +65,7 @@ const Warper = styled.div`
 Logo.defaultProps = {
     src:LogoPic,
 }
+
 const Navbar = styled.nav<Props>`
         font-family: ${CSSCONST.FONT_ZILLA};
         font-size: 18px;
@@ -75,8 +77,6 @@ const Navbar = styled.nav<Props>`
         width: 100%;
         justify-content: center;
         margin-top: 40px;
-      
- 
     }
        @media only screen and (min-width: 801px){
            display: flex;
@@ -95,7 +95,6 @@ const Name = styled.div`
       font-family: ${CSSCONST.FONT_ZILLA};
       font-size: 28px;
       height: 80px;
-        
     }
     @media only screen and (min-width: 801px){
         display: none;
@@ -135,22 +134,22 @@ const DisapearWhenSmall = styled.div`
 
 const ITEMS = [{
     key:'home',
-    text:'HOME',
+    tabPage:PAGE.HOME,
 },{
     key:'about',
-    text:'ABOUT',
+    tabPage:PAGE.ABOUT,
 },{
     key:'menus',
-    text:'MENUS',
+    tabPage:PAGE.MENUS,
 },{
     key:'upcomingEvents',
-    text:'UPCOMING.EVENTS',
+    tabPage:PAGE.UPCOMMING,
 },{
     key:'contact',
-    text:'CONTACT',
+    tabPage:PAGE.CONTACT,
 },]
 
-const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void})=>{
+const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void,changePage:(pageName:string)=>void,currentPage:String})=>{
   let showOrNot;
   if(props.dropMenu){
       showOrNot = 'flex';
@@ -172,7 +171,9 @@ const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void
 
                <Navbar show = {showOrNot}>
                {ITEMS.map((item) => (
-                   <Item key={item.key}>{item.text}</Item>
+                   <Item active={props.currentPage === item.tabPage} key={item.key} 
+                   onclick={()=>{ props.changePage(item.tabPage);
+                   }}>{item.tabPage}</Item>
                ))}
                </Navbar>
 

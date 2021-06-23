@@ -8,7 +8,7 @@ const FooterContainer = styled.footer`
       background-color: ${CSSCONST.BLUE};
       box-shadow: 0px -1px 6px 0.1px #ccc;
       width: 100%;
-
+      margin-top: 3%;
 `;
 
 const Footer = ()=>{

@@ -47,16 +47,16 @@ module.exports = {
                   "style-loader",
                   "css-loader",
                   // Translates CSS into CommonJS
-                  "postcss-loader",  // css-loader  改成 postcss-loader  可以自动加上-webkit 增加兼容性
+                 // "postcss-loader",  // css-loader  改成 postcss-loader  可以自动加上-webkit 增加兼容性
                   // Compiles Sass to CSS
-                  "sass-loader"
+                //  "sass-loader"
                 ],
           }
         ]},
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
+        publicPath: '/'  //  for react router
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -66,7 +66,9 @@ module.exports = {
     ],
     devServer: {
         contentBase: './dist',  // live server
-        historyApiFallback: true,
+        historyApiFallback: true,  // for react router
+      //  port:9000,
+        
       },
-
+  
 }

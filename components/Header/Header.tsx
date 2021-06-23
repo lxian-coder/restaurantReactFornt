@@ -10,16 +10,14 @@ const HeaderWarper = styled.header`
    z-index: 10;
    top: 0%;
    margin:auto;
-
-
 `;
 
 
-const Header=(props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void})=>{
+const Header=(props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void,changePage:(pageName:String)=>void,currentPage:String })=>{
 
    return <HeaderWarper>
-     <Banner />
-     <NavBar dropMenu={props.dropMenu} toggleDropMenu={props.toggleDropMenu}/>
+     <Banner   onclick={()=>{ props.changePage("CONTACT")}} />
+     <NavBar currentPage={props.currentPage} dropMenu={props.dropMenu} toggleDropMenu={props.toggleDropMenu} changePage={props.changePage}/>
    </HeaderWarper> ;
 }
 

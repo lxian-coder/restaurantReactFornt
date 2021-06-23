@@ -4,7 +4,8 @@ import CSSCONST from '../../cssConst';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Home from './components/Home/Home';
-import {BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
+import Menu from './components/Menu/Menu'
+import { Switch, Route, } from 'react-router-dom';
 
 const PageWarper = styled.div`
      display: flex;
@@ -14,22 +15,21 @@ const PageWarper = styled.div`
        width:100%;
      `;
 
-const Pages =()=>{
+const Pages =(props:{changePage:(pageName:string)=>void,changeMeal:(meal:string)=>void,currentMeal:string})=>{
      
    return (
-        <Router>
             <Switch>
             <PageWarper>
-              <Route path="/contact" component={Contact}></Route>
-              <Route path="/about" component={About}></Route>   
-              <Route path="/" component={Home}></Route>   
+              <Route path="/CONTACT" component={Contact}></Route>
+              <Route path="/ABOUT" component={About}></Route>   
+              <Route path="/HOME" component={Home}></Route>   
+              <Route path="/MENUS" ><Menu currentMeal={props.currentMeal} changeMeal={props.changeMeal} onclick={()=>{
+                   props.changePage("CONTACT");
+                   
+              }} /></Route>
         </PageWarper>
             </Switch>
-        </Router>
-       
-
    );
-   
 
 }
 export default Pages;

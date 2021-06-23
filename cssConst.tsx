@@ -1,5 +1,6 @@
  const CSSCONST = {
     BLUE:'#17A2BB',
+    GREY:'#BCBCBC',
     FONT_ALATA: "'Alata', sans-serif",
     FONT_ASAR: "'Asar', serif",
     FONT_RAKKAS: "'Rakkas', cursive",

@@ -1,14 +1,14 @@
 import React from 'react';
 import styled,{css} from 'styled-components';
 import CSSCONST from '../../../../../../cssConst';
+import {Link} from 'react-router-dom';
 
-const ItemName = styled.div`
-     
+const ItemName = styled.div<Props>`
         display: flex;
         align-items: flex-end;
         justify-content: center;
         text-decoration: none;
-        color: black;
+        color:${p=>p.selected};
         letter-spacing: 0.7px;
         height: 75%;
         font-style: italic;
@@ -35,10 +35,18 @@ const ItemName = styled.div`
         }
         margin-left: 1.3rem;
 `;
+interface Props {
+    selected:string;
+}
 
-const Item =(props:{children:string}) =>{
-
-    return <ItemName >{props.children}</ItemName>;
+const Item =(props:{children:string,active:boolean,onclick:()=>void}) =>{
+            let addr = "/" + props.children;
+  
+            console.log(addr);
+    return  <Link style={{textDecoration:"none"}} to={addr}><ItemName selected={props.active ? CSSCONST.BLUE : 'black'} 
+    onClick={(event)=>{
+             event.preventDefault;
+             props.onclick()}}>{props.children}</ItemName></Link>;
 }
 export default Item;
 

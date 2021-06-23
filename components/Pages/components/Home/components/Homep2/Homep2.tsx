@@ -33,6 +33,7 @@ const ImgContainer = styled.div`
 `;
 const ImgWarper= styled.img`
    max-width: 450px;
+   box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 
 const Homep2 = ()=>{

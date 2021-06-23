@@ -15,6 +15,7 @@ const YoutubeVideo = styled.iframe`
    width: 100%;
    height:680px;
    border:0;
+   box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 const HomeContainer = styled.div`
     width: 100%;
@@ -26,6 +27,7 @@ const HomeImage = styled.img`
      width: 100%;
      height: 680px;
      border: 0;
+     box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 
 const Home = ()=>{
