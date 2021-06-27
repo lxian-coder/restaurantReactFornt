@@ -6,6 +6,7 @@ const FooterWarper1 = styled.div`
        display: flex;
        flex-direction: column;
        justify-content: center;
+       width: min(100%,1100px);
 `;
 
 const FooterPartWarper = styled.div`
@@ -20,12 +21,9 @@ const FooterPartWarper = styled.div`
 `;
 const FooterPartWarper2 = styled.div`
    display: flex;
-   width: 850px;
+   width: 100%;
    justify-content: space-between;
-   @media only screen and (max-width: 800 px){
-        width: 750px;
-      
-    }
+ 
 `;
 const Name = styled.div`
      color:white;

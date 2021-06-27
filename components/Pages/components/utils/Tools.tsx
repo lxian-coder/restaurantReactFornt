@@ -12,12 +12,12 @@ export const Line = styled.hr`
 
 export const ImgContainer = styled.img`
       width: 100%;
-      height: 483px;
+      max-height: 483px;
       box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 
 export const PageContainer = styled.div`
-    width: 1200px;
+    width: min(100%,1100px);
     display: flex;
     justify-content: space-between;
     min-height: 450px;
@@ -30,7 +30,7 @@ export const PageContainer = styled.div`
  export const Iframe = styled.iframe`
   width: 100%;
   border: none;
-  height: 500px;
+  max-height: 500px;
   box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 

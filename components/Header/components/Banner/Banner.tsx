@@ -5,36 +5,19 @@ import {Link} from 'react-router-dom';
 
 const BannerBG = styled.div`
    background-color: ${CSSCONST.BLUE}; 
-   width:100%;
+   width: 100%;
    top:0;
    display: flex;
    justify-content:center;
-   @media only screen and (max-width: 680px){
-        display: flex;
-        justify-content: flex-start;
-    }
- 
-
    `;
 const BannerText = styled.div`
    display: flex;
    justify-content: space-between;
-   width: 1200px;
    height: 54px;
    margin-left: 10px;
    font-style: italic;
    padding-bottom:6px;
-   @media only screen and (max-width: 1217px){
-        width: 800px;
-    }
-    @media only screen and (max-width: 1000px){
-        width: 600px;
-    }
-  
-    @media only screen and (max-width: 425px){
-        width: 510px;
-      
-    }
+   width: min(100%,68.75rem);
 
 `;
 const Text= styled.div`

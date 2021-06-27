@@ -14,8 +14,8 @@ align-items: flex-end;
 `;
 const Btn = styled.button`
    @media only screen and (max-width:800px){
-      height: 50px;
-      width: 50px;
+      height: 3.125rem;
+      width: 3.125rem;
    }; 
 `;
 

@@ -21,28 +21,18 @@ const NavBarCenter = styled.div`
        opacity: 0.9;
   `;
 const NavBarContainer = styled.div`
-      width: 1200px;
-       @media only screen and (max-width: 800px){
+      width: min(100%,1100px);
+  
        margin-right: 1rem;
        margin-left: 1rem;
-       width: 650px;
-    }
-    @media only screen and (max-width: 1312px){
-     width: 1100px;
-    }
-    @media only screen and (max-width: 1200px){
-     width: 1000px;
-    }
-    @media only screen and (max-width: 1092px){
-     width: 900px;
-    }
-    @media only screen and (max-width: 894px){
-     width: 820px;
-    }
+    
+ 
+
 `;
 const NavBarContainerSpace = styled.div`
      display: flex;
      justify-content: space-between;
+     max-width:100% ;
      @media only screen and (max-width: 800px){
       display: flex;
       flex-direction: column;
@@ -61,7 +51,7 @@ const Warper = styled.div`
    display: flex;
    justify-content: center;
    height: 100%;
-   width: fit-content;
+    width: auto;
    margin-left: 0.5rem;
 
 `;
@@ -114,22 +104,6 @@ const SmallScreenWarper =styled.div`
        @media only screen and (min-width:801px){
            display: none;
        }
-       @media only screen and (max-width: 800px){
-        max-width: 750px;
-        width: 100%;
-    }
-    @media only screen and (max-width: 744px){
-        width: 700px;
-    }
-    @media only screen and (max-width: 646px){
-        width: 650px;
-    }
-    @media only screen and (max-width: 500px){
-        width: 550px;
-    }
-    @media only screen and (max-width: 400px){
-        width: 500px;
-    }
 
 `;
 const DisapearWhenSmall = styled.div`

@@ -5,11 +5,12 @@ import NavBar from './components/NavBar/NavBar';
 
 const HeaderWarper = styled.header`
    display: flex;
-   flex-wrap: wrap;
+   flex-direction: column;
    position: fixed;
    z-index: 10;
    top: 0%;
    margin:auto;
+   width: 100%;
 `;
 
 const Header=(props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void,changePage:(pageName:String)=>void,currentPage:String })=>{

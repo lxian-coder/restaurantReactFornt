@@ -13,7 +13,7 @@ import Home2 from './components/Homep2/Homep2';
 
 const YoutubeVideo = styled.iframe`
    width: 100%;
-   height:680px;
+   height:42.5rem;
    border:0;
    box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
@@ -25,7 +25,7 @@ const HomeContainer = styled.div`
 `;
 const HomeImage = styled.img`
      width: 100%;
-     height: 680px;
+     height: 42.5rem;
      border: 0;
      box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
