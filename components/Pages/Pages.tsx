@@ -15,6 +15,8 @@ const PageWarper = styled.div`
      z-index: 0;
      margin-top: 270px;
        width:100%;
+       margin-right: 1rem;
+       margin-left: 1rem;
      `;
 
 const Pages =(props:{changePage:(pageName:string)=>void,changeMeal:(meal:string)=>void,currentMeal:string})=>{

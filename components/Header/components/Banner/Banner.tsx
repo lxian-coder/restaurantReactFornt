@@ -14,10 +14,11 @@ const BannerText = styled.div`
    display: flex;
    justify-content: space-between;
    height: 54px;
-   margin-left: 10px;
+   margin-left: 2rem;
    font-style: italic;
    padding-bottom:6px;
    width: min(100%,68.75rem);
+   margin-right: 0.4rem;
 
 `;
 const Text= styled.div`

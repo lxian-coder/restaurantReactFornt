@@ -18,21 +18,24 @@ const Side1 =styled.div`
   width: 100%;
 `;
 const Text = styled.div`
-font-size: 36px;
+font-size: 2.25rem;
 margin-bottom: 3%;
 `;
 const Side2 =styled.div`
        display: flex;
        justify-content: center;
+       width: 130%;
+    
 `;
 
 const ImgContainer = styled.div`
-  width: 500px;
+  width:100%;
+
   display: flex;
   justify-content: center;
 `;
 const ImgWarper= styled.img`
-   max-width: 450px;
+   width: 80%;
    box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 

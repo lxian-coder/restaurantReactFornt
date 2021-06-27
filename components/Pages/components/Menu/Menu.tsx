@@ -245,7 +245,7 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
                               <div  key={ele.id}>{ele.description}</div>
                               <PriceWarper>
                                <Price2Warper>{ele.price2==='' ? '':'$'}{ele.price2}</Price2Warper>
-                               <Price1Warper key={ele.id} style={isNaN(ele.price) ? {width:"170px",justifyContent:"flex-end"}:{}}>${ele.price}</Price1Warper>
+                               <Price1Warper key={ele.id} style={isNaN(ele.price) ? {width:"10.625",justifyContent:"flex-end"}:{}}>${ele.price}</Price1Warper>
                               </PriceWarper>
                           </LiLine>
                       }})}

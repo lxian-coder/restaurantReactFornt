@@ -9,7 +9,7 @@ import {Line,ImgContainer,PageContainer,Iframe} from '../utils/Tools';
 
 const ContactContainer = styled.div`
 
-    max-width: 1200px;
+      width: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -18,9 +18,8 @@ const TextContainer = styled.div`
 display: flex;
   justify-content: space-between;
    width: 100%;
-
    font-family:${CSSCONST.FONT_RAKKAS};
-   font-size: 22px;
+   font-size: 1.375rem;
 `;
 const TextContainer2 = styled.div`
      display: flex;
@@ -28,18 +27,23 @@ const TextContainer2 = styled.div`
      height: 100%;
 `;
 const Title = styled.div`
-   font-size: 22px;
+   font-size: 1.375rem;
 `;
 const Content = styled.div`
-   font-size:20px;
+   font-size: 1.25rem;
 `;
 const EntryWarper = styled.div`
      margin-bottom: 25px;
 `;
+const GoogleWarper = styled.div`
+ width: 100%;
+  height: 30.1875rem;
+`;
 const GoogleMap = styled.iframe`
   width: 100%;
+  height: 100%;
   border: none;
-  height: 500px;
+
   box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 
@@ -88,10 +92,13 @@ const  Contact = ()=>{
                 </TextContainer2>
                 </TextContainer>
                 <Line></Line>
-                 <GoogleMap  src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.940695511147!2d148.2966295165443!3d-41.87262238471123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaa7142f2f635350d%3A0x29059c694902a1ec!2s1%20Tasman%20Hwy%2C%20Bicheno%20TAS%207215!5e0!3m2!1sen!2sau!4v1623832989408!5m2!1sen!2sau"}>
+                <GoogleWarper>
+                <GoogleMap  src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.940695511147!2d148.2966295165443!3d-41.87262238471123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaa7142f2f635350d%3A0x29059c694902a1ec!2s1%20Tasman%20Hwy%2C%20Bicheno%20TAS%207215!5e0!3m2!1sen!2sau!4v1623832989408!5m2!1sen!2sau"}>
                  </GoogleMap>
+                </GoogleWarper>
+               
                <Line />
-                 <ImgContainer style={{height:"700px"}} src={ContactMap}></ImgContainer>
+                 <ImgContainer style={{height:"45rem"}} src={ContactMap}></ImgContainer>
 
             </Side2Warper>
  </PageContainer>
