@@ -14,9 +14,12 @@ const ItemName = styled.div<Props>`
         font-style: italic;
         &:hover{
             color:${CSSCONST.BLUE};
+            transition: 0.5s;
         }
+    
         &:active{
             color:lightblue;
+           
         }
         &::after{
              content: " ";
@@ -46,7 +49,8 @@ const Item =(props:{children:string,active:boolean,onclick:()=>void}) =>{
     return  <Link style={{textDecoration:"none"}} to={addr}><ItemName selected={props.active ? CSSCONST.BLUE : 'black'} 
     onClick={(event)=>{
              event.preventDefault;
-             props.onclick()}}>{props.children}</ItemName></Link>;
+             props.onclick();
+             }}>{props.children}</ItemName></Link>;
 }
 export default Item;
 

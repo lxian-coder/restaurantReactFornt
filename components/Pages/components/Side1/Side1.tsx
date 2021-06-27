@@ -7,7 +7,8 @@ import CSSCONST from '../../../../cssConst';
 export const Side1Warper = styled.aside`
           font-family: ${CSSCONST.FONT_RAKKAS};
           font-size: 48px;
-          width: 180px;
+          width: 200px;
+
           display: flex;
           justify-content: flex-start;
           margin-right: 40px;

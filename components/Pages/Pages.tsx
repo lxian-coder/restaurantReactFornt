@@ -4,8 +4,10 @@ import CSSCONST from '../../cssConst';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Home from './components/Home/Home';
-import Menu from './components/Menu/Menu'
+import Menu from './components/Menu/Menu';
+import EVENTS from './components/Events/Events';
 import { Switch, Route, } from 'react-router-dom';
+
 
 const PageWarper = styled.div`
      display: flex;
@@ -20,13 +22,15 @@ const Pages =(props:{changePage:(pageName:string)=>void,changeMeal:(meal:string)
    return (
             <Switch>
             <PageWarper>
+              <Route path="/" exact component={Home}></Route> 
+              <Route path="/HOME"  component={Home}></Route>  
               <Route path="/CONTACT" component={Contact}></Route>
               <Route path="/ABOUT" component={About}></Route>   
-              <Route path="/HOME" component={Home}></Route>   
+             
               <Route path="/MENUS" ><Menu currentMeal={props.currentMeal} changeMeal={props.changeMeal} onclick={()=>{
                    props.changePage("CONTACT");
-                   
               }} /></Route>
+               <Route path="/UPCOMING.EVENTS" exact component={EVENTS}></Route>  
         </PageWarper>
             </Switch>
    );

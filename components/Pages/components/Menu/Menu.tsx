@@ -3,13 +3,10 @@ import styled,{css} from 'styled-components';
 import CSSCONST from '../../../../cssConst';
 import {Side1Warper} from '../Side1/Side1';
 import {Side2Warper} from '../SIde2/Side2';
-import ContactImg from '../../../../assets/contact.jpg';
-import ContactMap from '../../../../assets/contactMap.jpg';
+
 import {Line,ImgContainer,PageContainer,Iframe} from '../utils/Tools';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import { data } from 'autoprefixer';
-import { electron } from 'webpack';
 import { MEAL } from '../../../../MEAL';
 import menu1 from '../../../../assets/menu1.png';
 import menu2 from '../../../../assets/menu2.jpg';
@@ -33,7 +30,7 @@ const CATEGORY = [{
    value:"lunch"
 },{
   key:'Lunch Specials',
-  value:"lunch",
+  value:"lunchSpecial",
 },{
   key:'Entrée',
   value:'entrée'
@@ -150,13 +147,13 @@ position: absolute;
 top: 91%;
 left: 45%;
 `;
-const CategoryBottleWarper = styled.div<Props2>`
-display: ${p=>p.showOrNot};
+const CategoryBottleWarper = styled.div`
+display:flex ;
 justify-content: space-between;
 `;
 
-const BottleGlassWarper = styled.div`
-display: flex;
+const BottleGlassWarper = styled.div<Props2>`
+display: ${p=>p.showOrNot};
 justify-content: space-between;
 `;
 const BottleWarper = styled.img`
@@ -172,9 +169,9 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
    useEffect(()=>{
        getMenus();
   },[])
- 
+
    const getMenus = async()=>{ 
-     const data = await  axios.get('http://localhost:5000/menu');
+     const data = await  axios.get('http://Sealife-env.eba-8gr2micd.ap-southeast-2.elasticbeanstalk.com/menu');
      setItems(data.data);
      console.log(data);
    }
@@ -234,15 +231,14 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
 
                  {CATEGORY.map(({key,value})=>{
                   return  <UL>
-                          <CategoryBottleWarper showOrNot={key==="Sparkling & Rose Wine" || key === "White Wine" || key === "Red Wine" ? "flex":"none"}>
+                          <CategoryBottleWarper >
                           <Category id={key} >{key}</Category>
-                          <BottleGlassWarper>
+                          <BottleGlassWarper showOrNot={key==="Sparkling & Rose Wine" || key === "White Wine" || key === "Red Wine" ? "flex":"none"}>
                               <BottleWarper src={glass}></BottleWarper>
                               <BottleWarper src={bottle}></BottleWarper>
                             </BottleGlassWarper>
                           </CategoryBottleWarper>
                         
-                           
                             {items.map((ele)=>{
                             if(ele.category === value){
                               return  <LiLine>

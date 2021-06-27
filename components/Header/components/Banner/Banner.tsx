@@ -22,6 +22,8 @@ const BannerText = styled.div`
    width: 1200px;
    height: 54px;
    margin-left: 10px;
+   font-style: italic;
+   padding-bottom:6px;
    @media only screen and (max-width: 1217px){
         width: 800px;
     }
@@ -38,7 +40,7 @@ const BannerText = styled.div`
 const Text= styled.div`
     color: white ;
     font-family: ${CSSCONST.FONT_ZILLA};
-    font: italic;
+ 
      height: 100%;
      width: fit-content;
     display: flex;
@@ -56,7 +58,6 @@ const Banner = (props:{onclick:()=>void})=>{
                       event.preventDefault;
                       props.onclick()}}>Book a Table</Text>
                   </Link>
-                
                  <Text>1 Tasman Hwy, Bicheno TAS 7215 / Tel: (03) 6375 1121 </Text>
               </BannerText>
            </BannerBG>

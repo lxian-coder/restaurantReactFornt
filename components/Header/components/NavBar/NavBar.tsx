@@ -43,6 +43,10 @@ const NavBarContainer = styled.div`
 const NavBarContainerSpace = styled.div`
      display: flex;
      justify-content: space-between;
+     @media only screen and (max-width: 800px){
+      display: flex;
+      flex-direction: column;
+    }
 
 `;
 const Logo = styled.img`
@@ -69,13 +73,14 @@ Logo.defaultProps = {
 const Navbar = styled.nav<Props>`
         font-family: ${CSSCONST.FONT_ZILLA};
         font-size: 18px;
+  
         
    @media only screen and  (max-width:800px){
         display: ${p => p.show};
         flex-direction: column;
-        height: 100%;
+        height: 300px;;
         width: 100%;
-        justify-content: center;
+        justify-content: space-around;
         margin-top: 40px;
     }
        @media only screen and (min-width: 801px){
@@ -104,6 +109,7 @@ const SmallScreenWarper =styled.div`
         width: 100%;
         display: flex;
         justify-content: space-between;
+        height: 80px;
 
        @media only screen and (min-width:801px){
            display: none;
@@ -164,23 +170,24 @@ const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void
               <Button dropMenu={props.dropMenu} toggleDropMenu={props.toggleDropMenu}></Button>
                <Name>SEA LIFE</Name>
                <Warper>
-               <LittleLogo src={littleLogo1}></LittleLogo>
-               <LittleLogo src={littleLogo2}></LittleLogo>
+               <a href="https://www.facebook.com/SealifeBicheno"> <LittleLogo src={littleLogo1}></LittleLogo></a>
+              <a href="https://www.tripadvisor.com.au/Restaurant_Review-g261650-d728229-Reviews-Sealife_Bicheno-Bicheno_Glamorgan_Spring_Bay_Tasmania.html"> <LittleLogo src={littleLogo2}></LittleLogo></a>
                </Warper>
               </SmallScreenWarper>
 
                <Navbar show = {showOrNot}>
                {ITEMS.map((item) => (
-                   <Item active={props.currentPage === item.tabPage} key={item.key} 
+                   <Item active={props.currentPage === item.tabPage} key={item.key}  
                    onclick={()=>{ props.changePage(item.tabPage);
+                                   props.toggleDropMenu(false);
                    }}>{item.tabPage}</Item>
                ))}
                </Navbar>
 
                <DisapearWhenSmall>
                <Warper>
-               <LittleLogo src={littleLogo1}></LittleLogo>
-               <LittleLogo src={littleLogo2}></LittleLogo>
+              <a href="https://www.facebook.com/SealifeBicheno"> <LittleLogo src={littleLogo1}></LittleLogo></a>
+              <a href="https://www.tripadvisor.com.au/Restaurant_Review-g261650-d728229-Reviews-Sealife_Bicheno-Bicheno_Glamorgan_Spring_Bay_Tasmania.html"> <LittleLogo src={littleLogo2}></LittleLogo></a>
                </Warper>
                </DisapearWhenSmall>
 

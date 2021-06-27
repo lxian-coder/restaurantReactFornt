@@ -12,7 +12,6 @@ const HeaderWarper = styled.header`
    margin:auto;
 `;
 
-
 const Header=(props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void,changePage:(pageName:String)=>void,currentPage:String })=>{
 
    return <HeaderWarper>

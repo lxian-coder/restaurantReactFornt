@@ -20,6 +20,7 @@ export const PageContainer = styled.div`
     width: 1200px;
     display: flex;
     justify-content: space-between;
+    min-height: 450px;
     @media only screen and (max-width: 961px){
         display: flex;
         justify-content: center;
