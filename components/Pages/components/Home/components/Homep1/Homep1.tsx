@@ -9,19 +9,21 @@ import homePack4 from '../../../../../../assets/homePack4.jpeg';
 
 const HomeP1Container = styled.div`
      display: flex;
+     width: 100%;
      justify-content: space-between;
-     align-items: center;
      font-family: ${CSSCONST.FONT_ZILLA};
    
-    
+
+     @media only screen and (max-width:700px){
+       flex-wrap:wrap;
+       justify-content: center;
+     }
 `;
 
 const Side1 = styled.div`
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
-  
 `;
 
 const Title = styled.div`
@@ -35,16 +37,11 @@ const TextArea = styled.div`
 const Side2 = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
-align-items: flex-end;
-
 
 `;
 
 const PhotoLine = styled.div`
    display: flex;
-   justify-content: center;
-  
    width: 80%;
 `;
 const Photo1 =styled.img`
