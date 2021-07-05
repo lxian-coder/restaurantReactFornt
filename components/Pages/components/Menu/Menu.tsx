@@ -105,6 +105,7 @@ const UL = styled.ul`
     padding-bottom:35px;
     font-family:${CSSCONST.FONT_ASAR};
     z-index: 1;
+    position: relative;
 `;
 const LiLine =styled.li`
      display: flex;
@@ -138,6 +139,7 @@ width: 50%;
 position: absolute;
 top: 13%;
 left: 34%;
+z-index: 0;
 
 `;
 
@@ -146,12 +148,14 @@ width: 40%;
 position: absolute;
 top: 54%;
 left: 38%;
+z-index: 0;
 `;
 const Img3Wraper = styled.img`
 width: 37%;
 position: absolute;
 top: 91%;
 left: 45%;
+z-index: 0;
 `;
 const CategoryBottleWarper = styled.div`
 display:flex ;

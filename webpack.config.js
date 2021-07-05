@@ -68,7 +68,9 @@ module.exports = {
         contentBase: './dist',  // live server
         historyApiFallback: true,  // for react router
       //  port:9000,
-        
+      historyApiFallback: true,
+      contentBase: './',
+      hot: true
       },
   
 }
