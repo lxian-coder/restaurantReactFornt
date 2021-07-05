@@ -9,7 +9,7 @@ const BannerBG = styled.div`
    top:0;
    display: flex;
    justify-content:center;
-   height: 54px;
+   height: 3.375rem;
    `;
 const BannerText = styled.div`
    display: flex;

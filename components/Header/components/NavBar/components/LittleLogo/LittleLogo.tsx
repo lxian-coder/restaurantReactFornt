@@ -9,8 +9,8 @@ const LittleLogo = styled.img`
      top:50%;
      @media only screen and (max-width:800px){
          top: 56%;
-         width:36px;
-         height: 33px;
+         width:35px;
+         height: 32px;
      }
 
 `;

@@ -8,12 +8,12 @@ height:100%;
 display: flex;
 justify-content: flex-start;
 align-items: flex-end;
-@media only screen and (min-width:801px){
+@media only screen and (min-width:961px){
       display: none;
     }; 
 `;
 const Btn = styled.button`
-   @media only screen and (max-width:800px){
+   @media only screen and (max-width:960px){
       height: 3.125rem;
       width: 3.125rem;
    }; 

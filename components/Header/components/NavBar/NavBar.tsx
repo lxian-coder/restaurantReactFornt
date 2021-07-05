@@ -37,12 +37,11 @@ const NavBarContainerSpace = styled.div`
       display: flex;
       flex-direction: column;
     }
-
 `;
 const Logo = styled.img`
    max-width: 182px;
    max-height: 139px;
-   @media only screen and (max-width: 800px){
+   @media only screen and (max-width: 961px){
         display: none;
     }
     
@@ -64,11 +63,9 @@ const Navbar = styled.nav<Props>`
         font-family: ${CSSCONST.FONT_ZILLA};
         font-size: 22px;
        	font-weight: 500;
-    
-           
-  
-        
-   @media only screen and  (max-width:800px){
+        max-width: 100%;
+
+   @media only screen and  (max-width:960px){
         display: ${p => p.show};
         flex-direction: column;
         height: 300px;;
@@ -76,7 +73,7 @@ const Navbar = styled.nav<Props>`
         justify-content: space-around;
         margin-top: 40px;
     }
-       @media only screen and (min-width: 801px){
+       @media only screen and (min-width: 961px){
            display: flex;
            max-width: 35%;
            width: 100%;
@@ -86,7 +83,7 @@ const Navbar = styled.nav<Props>`
 `;
 
 const Name = styled.div`
-    @media only screen and (max-width:800px){
+    @media only screen and (max-width:960px){
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -94,7 +91,7 @@ const Name = styled.div`
       font-size: 28px;
       height: 80px;
     }
-    @media only screen and (min-width: 801px){
+    @media only screen and (min-width: 961px){
         display: none;
     }
 `;
@@ -104,13 +101,13 @@ const SmallScreenWarper =styled.div`
         justify-content: space-between;
         height: 80px;
 
-       @media only screen and (min-width:801px){
+       @media only screen and (min-width:961px){
            display: none;
        }
 
 `;
 const DisapearWhenSmall = styled.div`
-  @media only screen and (max-width:800px){
+  @media only screen and (max-width:960px){
            display: none;
        }
 `;

@@ -8,5 +8,8 @@ export const Side2Warper = styled.aside`
         flex-direction:column;
         justify-content: center;
          width: 75%;
+         @media only screen and (max-width:961px){
+         width: 100%;
+      }
 
 `;
