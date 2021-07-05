@@ -25,6 +25,9 @@ const FooterPartWarper2 = styled.div`
    width: 100%;
    justify-content: space-between;
    position:relative;
+   @media only screen and (max-width:800px){
+         display: none;
+      }
  
 `;
 const Name = styled.div`
@@ -71,11 +74,15 @@ font-family:${CSSCONST.FONT_RAMMETTO};
 color: white ;
 `;
 const FloatText = styled.div`
+      display: flex;
       font-size: 16px;
       font-family:${CSSCONST.FONT_RAMMETTO};
       position:absolute;
       right:4%;
       bottom: 30%;
+      @media only screen and (max-width:1000px){
+         display: none;
+      }
 `;
 
 const FooterP1 = ()=>{

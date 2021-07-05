@@ -11,7 +11,7 @@ export const Side1Warper = styled.aside`
 
           display: flex;
           justify-content: flex-start;
-          margin-right: 40px;
+        
           flex-direction: column;
           z-index: 1;
 
