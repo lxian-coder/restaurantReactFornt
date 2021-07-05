@@ -137,8 +137,8 @@ const MenuSide2Warper =styled.div`
 const Img1Wraper = styled.img`
 width: 50%;
 position: absolute;
-top: 13%;
-left: 34%;
+top: 13.5%;
+left: 40%;
 z-index: 0;
 
 `;
@@ -146,15 +146,15 @@ z-index: 0;
 const Img2Wraper = styled.img`
 width: 40%;
 position: absolute;
-top: 54%;
-left: 38%;
+top: 51%;
+left: 48%;
 z-index: 0;
 `;
 const Img3Wraper = styled.img`
 width: 37%;
 position: absolute;
 top: 91%;
-left: 45%;
+left: 53%;
 z-index: 0;
 `;
 const CategoryBottleWarper = styled.div`
@@ -167,7 +167,7 @@ display: ${p=>p.showOrNot};
 justify-content: space-between;
 `;
 const BottleWarper = styled.img`
-  width: 30px;
+  width: 1.875rem;
   height: 35px;
   margin-left: 17px;
 `;

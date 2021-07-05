@@ -27,7 +27,6 @@ const YoutubeVideo = styled.iframe`
   width: 100%;
   height: 100%;
    border:0;
-
 `;
 const HomeContainer = styled.div`
     width: 100%;

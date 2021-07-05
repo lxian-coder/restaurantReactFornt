@@ -13,14 +13,12 @@ const Title = styled.div`
    font-size: 48px;
    text-align: justify;
 `;
-const TitleText = styled.p`
+const TitleText = styled.div`
    font-family: ${CSSCONST.FONT_RAKKAS};
-   font-size:24px;
-   display: flex;
-   width: 100%;
-   height: fit-content;
+   font-size:26px;
    text-align: justify;
-
+   width: 72%;
+  
 `;
 const TextTile = styled.div`
   font-family: ${CSSCONST.FONT_ALATA};
@@ -48,12 +46,10 @@ const TextDelete = styled.div`
 const Events = ()=>{
       return <PageContainer>
                <Side1Warper>
-                 <div style={{position:"fixed",width:"11%"}}>
-                      <Title>Upcoming <br/>Events.</Title>
+                      <Title>Upcoming Events.</Title>
                       <TitleText>
                        See what’s happening at Sealife! Check back often to learn about exciting menu updates, new wine, special events, and more.
                       </TitleText>
-                 </div>
                </Side1Warper>
               <Side2Warper>
                    <FetchData></FetchData>

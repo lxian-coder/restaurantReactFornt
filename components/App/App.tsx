@@ -14,13 +14,22 @@ type State={
    currentPage:string;
    currentMeal:string;
 };
+let url = window.location.pathname;
+console.log("haha："+url);
+const map = new Map();
+map.set('/HOME',PAGE.HOME);
+map.set('/CONTACT',PAGE.CONTACT);
+map.set('/MENUS',PAGE.MENUS);
+map.set('/UPCOMING%20',PAGE.UPCOMMING);
+map.set('/ABOUT',PAGE.ABOUT);
+
 class App extends React.Component<Props,State> {
     constructor(props:any){
        super(props);
 
        this.state = {
           dropMenu:false,
-          currentPage:PAGE.HOME,
+          currentPage:map.get(url),
           currentMeal:MEAL.BREAKFAST,
        };
 
