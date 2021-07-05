@@ -35,9 +35,15 @@ const TextContainer2 = styled.div`
 `;
 const Title = styled.div`
    font-size: 1.375rem;
+   @media only screen and (max-width:700px){
+      font-size: 16px;
+     }
 `;
 const Content = styled.div`
    font-size: 1.25rem;
+   @media only screen and (max-width:700px){
+      font-size: 14px;
+     }
 `;
 const EntryWarper = styled.div`
      margin-bottom: 25px;

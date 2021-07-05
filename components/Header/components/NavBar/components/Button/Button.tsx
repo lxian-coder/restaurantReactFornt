@@ -13,10 +13,7 @@ align-items: flex-end;
     }; 
 `;
 const Btn = styled.button`
-   @media only screen and (max-width:960px){
-      height: 3.125rem;
-      width: 3.125rem;
-   }; 
+ 
 `;
 
 

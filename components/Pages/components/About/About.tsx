@@ -13,15 +13,24 @@ const Title = styled.div`
    font-family: ${CSSCONST.FONT_ALATA};
    font-size: 24px;
    margin-top: 16px;
+   @media only screen and (max-width:700px){
+      font-size: 16px;
+     }
 `;
 const TextTitle = styled.div`
    font-size: 36px;
    font-family: ${CSSCONST.FONT_ALATA};
+   @media only screen and (max-width:700px){
+      font-size: 26px;
+     }
 `;
 const Text = styled.div`
      font-size: 24px;
      font-family: ${CSSCONST.FONT_ALATA};
      text-align: justify;
+     @media only screen and (max-width:700px){
+      font-size: 16px;
+     }
 `;
 
 

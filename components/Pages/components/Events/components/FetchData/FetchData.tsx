@@ -12,10 +12,16 @@ const FetchWarper = styled.div`
 const Title = styled.div`
      font-size: 36px;
      padding-bottom: 30px;
+     @media only screen and (max-width:700px){
+      font-size: 26px;
+     }
 `;
 
 const Text = styled.div`
   font-size: 22px;
+  @media only screen and (max-width:700px){
+      font-size: 16px;
+     }
 `;
 
 

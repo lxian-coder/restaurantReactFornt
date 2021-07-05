@@ -19,7 +19,8 @@ const BannerText = styled.div`
    font-style: italic;
    padding-bottom:6px;
    width: min(100%,68.75rem);
-   margin-right: 0.4rem;
+   margin-left: 2%;
+   margin-right: 2%;
 
 `;
 const Text= styled.div`

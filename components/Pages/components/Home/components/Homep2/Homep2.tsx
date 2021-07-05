@@ -21,6 +21,9 @@ const Text = styled.div`
 font-size: 2.25rem;
 margin-bottom: 3%;
 font-family: ${CSSCONST.FONT_ZILLA} ;
+@media only screen and (max-width:700px){
+      font-size: 26px;
+     }
 `;
 const Side2 =styled.div`
        display: flex;

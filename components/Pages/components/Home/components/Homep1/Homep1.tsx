@@ -35,10 +35,16 @@ const Side1 = styled.div`
 const Title = styled.div`
    font-size: 36px;
    display: flex;
+   @media only screen and (max-width:700px){
+      font-size: 26px;
+     }
 `;
 const TextArea = styled.div`
    font-size:24px;
    text-align: justify;
+   @media only screen and (max-width:700px){
+      font-size: 16px;
+     }
 `;
 const Side2Warper = styled.div`
     display: flex;

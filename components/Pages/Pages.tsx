@@ -17,6 +17,9 @@ const PageWarper = styled.div`
      margin-top: 15.625rem;
        width:100%;
        overflow-x: hidden;
+     @media only screen and (max-width:700px){
+       margin-top:12rem;
+     }
      `;
 
 const Pages =(props:{changePage:(pageName:string)=>void,changeMeal:(meal:string)=>void,currentMeal:string})=>{

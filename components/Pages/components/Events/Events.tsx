@@ -12,35 +12,49 @@ const Title = styled.div`
    padding-bottom: 40px;
    font-size: 48px;
    text-align: justify;
+
 `;
 const TitleText = styled.div`
    font-family: ${CSSCONST.FONT_RAKKAS};
    font-size:26px;
    text-align: justify;
    width: 72%;
+
   
 `;
 const TextTile = styled.div`
   font-family: ${CSSCONST.FONT_ALATA};
   font-size: 36px;
   margin-bottom: 20px;
+  @media only screen and (max-width:700px){
+      font-size: 26px;
+     }
 `;
 const Text = styled.div`
   font-family: ${CSSCONST.FONT_ALATA};
   font-size: 22px;
   text-align: justify;
+  @media only screen and (max-width:700px){
+      font-size: 16px;
+     }
 `;
 
 const TitleDelete = styled.div`
      font-size: 36px;
      padding-bottom: 30px;
      font-family: ${CSSCONST.FONT_ALATA};
+     @media only screen and (max-width:700px){
+      font-size: 26px;
+     }
 `;
 
 const TextDelete = styled.div`
   font-size: 22px;
   font-family: ${CSSCONST.FONT_ALATA};
   text-align: justify;
+  @media only screen and (max-width:700px){
+      font-size: 16px;
+     }
 `;
 
 const Events = ()=>{
