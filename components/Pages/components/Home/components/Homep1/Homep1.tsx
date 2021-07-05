@@ -10,19 +10,22 @@ import homePack4 from '../../../../../../assets/homePack4.jpeg';
 const HomeP1Container = styled.div`
      display: flex;
      width: 100%;
-     justify-content: space-between;
      font-family: ${CSSCONST.FONT_ZILLA};
-   
-
+     justify-content: space-between;
      @media only screen and (max-width:700px){
        flex-wrap:wrap;
        justify-content: center;
      }
 `;
-
-const Side1 = styled.div`
+const Side1Warper = styled.div`
     display: flex;
     justify-content: center;
+    width: 45%;
+    justify-content: flex-start;
+`;
+const Side1 = styled.div`
+    display: flex;
+    justify-content:center;
     flex-direction: column;
 `;
 
@@ -32,17 +35,24 @@ const Title = styled.div`
 `;
 const TextArea = styled.div`
    font-size:24px;
+   text-align: justify;
 `;
-
+const Side2Warper = styled.div`
+    display: flex;
+    width: 45%;
+    justify-content: flex-end;
+`;
 const Side2 = styled.div`
 display: flex;
 flex-direction: column;
+justify-content: flex-end;
+box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 
 `;
 
 const PhotoLine = styled.div`
    display: flex;
-   width: 80%;
+   width: 100%;
 `;
 const Photo1 =styled.img`
    width:30% ;
@@ -60,14 +70,18 @@ const Photo4 = styled.img`
 const Home1 = ()=>{
 
 return <HomeP1Container>
-        <Side1>
-           <Title>Enjoy with Us Today<br/><br/><br/></Title>
+       <Side1Warper>
+       <Side1>
+           <Title>Enjoy with Us Today<br/><br/></Title>
            <TextArea>
            Please try our Selection of Tasmanian 
            Seafood and Produce with Wines Mainly From East Coast Tasmania, 
            which We are certian will satisfy your appetite.
            </TextArea>
         </Side1>
+       </Side1Warper>
+        
+        <Side2Warper>
         <Side2>
              <PhotoLine>
                  <Photo1 src={homePack1}></Photo1>
@@ -78,6 +92,8 @@ return <HomeP1Container>
                  <Photo4 src={homePack4}></Photo4>
              </PhotoLine>
         </Side2>
+        </Side2Warper>
+
      </HomeP1Container>
 };
 

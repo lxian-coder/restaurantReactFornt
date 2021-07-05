@@ -5,11 +5,11 @@ import {Side1Warper} from '../Side1/Side1';
 import {Side2Warper} from '../SIde2/Side2';
 import ContactImg from '../../../../assets/contact.jpg';
 import ContactMap from '../../../../assets/contactMap.jpg';
-import {Line,ImgContainer,PageContainer,Iframe} from '../utils/Tools';
+import {Line,PageContainer,Iframe} from '../utils/Tools';
 
 const ContactContainer = styled.div`
 
-      width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -37,7 +37,7 @@ const EntryWarper = styled.div`
 `;
 const GoogleWarper = styled.div`
  width: 100%;
-  height: 30.1875rem;
+  height: 31rem;
 `;
 const GoogleMap = styled.iframe`
   width: 100%;
@@ -46,7 +46,11 @@ const GoogleMap = styled.iframe`
 
   box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
-
+const ImgContainer = styled.img`
+      width: 100%;
+      max-height: 40%;
+      box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
+`;
 const  Contact = ()=>{
 
  return    <PageContainer>
@@ -60,10 +64,10 @@ const  Contact = ()=>{
                 
                 <TextContainer2>
                     <EntryWarper>
-                    <Title>Reservations:<br/>(03)6375 1121</Title>
+                    <Title>Reservations:<br/>(03) 6375 1121</Title>
                     </EntryWarper>
                      <EntryWarper>
-                     <Title>GeneralEnquires:</Title>
+                     <Title>General Enquires:</Title>
                       <Content>sealifebicheno@gmail.com</Content>
                      </EntryWarper>
                      <EntryWarper>
@@ -78,8 +82,8 @@ const  Contact = ()=>{
                 <TextContainer2>
                     <EntryWarper>
                     <Title>Social:</Title>
-                        <Title>Facebook</Title>
-                        <Title>Trip advisor</Title>
+                    <a style={{color:"black"}} href="https://www.facebook.com/SealifeBicheno"> <Title>Facebook</Title></a>
+                    <a style={{color:"black"}}  href="https://www.tripadvisor.com.au/Restaurant_Review-g261650-d728229-Reviews-Sealife_Bicheno-Bicheno_Glamorgan_Spring_Bay_Tasmania.html">   <Title>Trip advisor</Title></a>
                     </EntryWarper>
                     <EntryWarper>
                     <Title>Parking:</Title>
@@ -98,7 +102,7 @@ const  Contact = ()=>{
                 </GoogleWarper>
                
                <Line />
-                 <ImgContainer style={{height:"45rem"}} src={ContactMap}></ImgContainer>
+                 <ImgContainer  src={ContactMap}></ImgContainer>
 
             </Side2Warper>
  </PageContainer>

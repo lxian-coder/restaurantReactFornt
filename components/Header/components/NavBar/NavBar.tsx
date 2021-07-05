@@ -62,7 +62,10 @@ Logo.defaultProps = {
 
 const Navbar = styled.nav<Props>`
         font-family: ${CSSCONST.FONT_ZILLA};
-        font-size: 18px;
+        font-size: 22px;
+       	font-weight: 500;
+    
+           
   
         
    @media only screen and  (max-width:800px){

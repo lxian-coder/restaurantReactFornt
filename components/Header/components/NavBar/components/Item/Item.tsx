@@ -7,11 +7,13 @@ const ItemName = styled.div<Props>`
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        white-space:nowrap;
         text-decoration: none;
         color:${p=>p.selected};
         letter-spacing: 0.7px;
         height: 75%;
         font-style: italic;
+        padding-right: 1.20rem;
         &:hover{
             color:${CSSCONST.BLUE};
             transition: 0.5s;
@@ -44,7 +46,6 @@ interface Props {
 
 const Item =(props:{children:string,active:boolean,onclick:()=>void}) =>{
             let addr = "/" + props.children;
-  
             console.log(addr);
     return  <Link style={{textDecoration:"none"}} to={addr}><ItemName selected={props.active ? CSSCONST.BLUE : 'black'} 
     onClick={(event)=>{

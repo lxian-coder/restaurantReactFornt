@@ -6,13 +6,12 @@ import styled,{css} from 'styled-components';
 export const Line = styled.hr`
    margin-top: 3.125rem;
    margin-bottom: 3.125rem;
-  
 `;
 
 
 export const ImgContainer = styled.img`
       width: 100%;
-      max-height: 30.1875rem;
+      max-height: 31.25rem;
       box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 

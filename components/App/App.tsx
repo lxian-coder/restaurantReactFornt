@@ -21,7 +21,7 @@ class App extends React.Component<Props,State> {
        this.state = {
           dropMenu:false,
           currentPage:PAGE.HOME,
-          currentMeal:MEAL.NOSECLECTED,
+          currentMeal:MEAL.BREAKFAST,
        };
 
        this.toggleDropMenu = this.toggleDropMenu.bind(this);

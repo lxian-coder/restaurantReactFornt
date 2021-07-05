@@ -20,12 +20,12 @@ const Side1 =styled.div`
 const Text = styled.div`
 font-size: 2.25rem;
 margin-bottom: 3%;
+font-family: ${CSSCONST.FONT_ZILLA} ;
 `;
 const Side2 =styled.div`
        display: flex;
        justify-content: center;
        width: 130%;
-    
 `;
 
 const ImgContainer = styled.div`

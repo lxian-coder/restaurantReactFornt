@@ -21,6 +21,9 @@ interface Props {
 interface Props2{
   showOrNot:string;
 }
+interface Props3 {
+  show:string;
+}
 
 const CATEGORY = [{
   key:'Breakfast',
@@ -67,6 +70,7 @@ const CATEGORY = [{
 const MenuContainer = styled.div`
  display: flex;
  justify-content: space-between;
+ padding-bottom: 2.8rem;
 `;
 
 const Title = styled.div`
@@ -88,8 +92,9 @@ const Li = styled.li<Props>`
 const BookTable = styled.div`
    font-size: 28px;
    font-family: ${CSSCONST.FONT_ALATA};
-   color:black;
+   font-weight: 700;
    padding-top: 25px;
+   z-index: 1;
 `;
 const Category = styled.div`
     font-size:24px;
@@ -98,6 +103,8 @@ const Category = styled.div`
 `;
 const UL = styled.ul`
     padding-bottom:35px;
+    font-family:${CSSCONST.FONT_ASAR};
+    z-index: 1;
 `;
 const LiLine =styled.li`
      display: flex;
@@ -127,22 +134,21 @@ const MenuSide2Warper =styled.div`
 `;
 
 const Img1Wraper = styled.img`
-width: 55%;
+width: 50%;
 position: absolute;
-top: 11%;
+top: 13%;
 left: 34%;
 
 `;
 
 const Img2Wraper = styled.img`
-width: 45%;
+width: 40%;
 position: absolute;
-top: 57%;
+top: 54%;
 left: 38%;
-
 `;
 const Img3Wraper = styled.img`
-width: 40%;
+width: 37%;
 position: absolute;
 top: 91%;
 left: 45%;
@@ -161,7 +167,11 @@ const BottleWarper = styled.img`
   height: 35px;
   margin-left: 17px;
 `;
-
+const SpaceAdd = styled.div<Props3>`
+ display: ${p=>p.show};
+ width: 100%;
+ height: 4.375rem;
+`;
 
 const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)=>void}) =>{
    　const [items, setItems] = useState([]);
@@ -203,7 +213,7 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
                      props.changeMeal(MEAL.LUNCH);
                    }} active={props.currentMeal === MEAL.LUNCH ? "black" : CSSCONST.GREY }>Lunch</Li>
                    <Li onClick={(evt)=>{
-                     scrollToAnchor("Main");
+                     scrollToAnchor("Entrée");
                      props.changeMeal(MEAL.DINNER);
                    }}active={props.currentMeal === MEAL.DINNER ? "black" : CSSCONST.GREY }>Dinner</Li>
                    <Li onClick={(evt)=>{
@@ -216,10 +226,10 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
                    }} active={props.currentMeal === MEAL.DESSERTS ? "black" : CSSCONST.GREY }>Desserts</Li>
                    <Li onClick={(evt)=>{
                      props.changeMeal(MEAL.REFRESHMENTS);
-                     scrollToAnchor("White Wine");
+                     scrollToAnchor("Sparkling & Rose Wine");
                    }}active={props.currentMeal === MEAL.REFRESHMENTS ? "black" : CSSCONST.GREY }>Refreshments</Li>
                  </Ul>
-                <Link to="/CONTACT"> <BookTable onClick={(evt)=>{props.onclick()}}>  Book a Table</BookTable> </Link> 
+                <Link style={{color:"black"}} to="/CONTACT"> <BookTable onClick={(evt)=>{props.onclick()}}>  Book a Table</BookTable> </Link> 
                  </div>
           
                </Side1Warper>
@@ -231,6 +241,7 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
 
                  {CATEGORY.map(({key,value})=>{
                   return  <UL>
+                           <SpaceAdd show={ key === "Lunch" || key ==="Entrée" || key === "Children" || key === "Sparkling & Rose Wine" || key === "Daily Desserts" ? "flex" : "none" }></SpaceAdd>
                           <CategoryBottleWarper >
                           <Category id={key} >{key}</Category>
                           <BottleGlassWarper showOrNot={key==="Sparkling & Rose Wine" || key === "White Wine" || key === "Red Wine" ? "flex":"none"}>
@@ -245,13 +256,13 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
                               <div  key={ele.id}>{ele.description}</div>
                               <PriceWarper>
                                <Price2Warper>{ele.price2==='' ? '':'$'}{ele.price2}</Price2Warper>
-                               <Price1Warper key={ele.id} style={isNaN(ele.price) ? {width:"10.625",justifyContent:"flex-end"}:{}}>${ele.price}</Price1Warper>
+                               <Price1Warper key={ele.id} style={isNaN(ele.price) ? {width:"10.625",justifyContent:"flex-end",whiteSpace:"nowrap"}:{}}>{ele.price === "Price Upon Request" || ele.price ==="" ? "":"$"}{ele.price}</Price1Warper>
                               </PriceWarper>
                           </LiLine>
                       }})}
                   </UL>
                  })}
-                 <div style={{fontSize:"24px"}}>Non Alcoholic Drink Available<br/>Menu Indicative Only - Meals and Prices Subject to Change</div>
+                 <div style={{fontSize:"24px",fontFamily:CSSCONST.FONT_ASAR}}>Non Alcoholic Drink Available<br/>Menu Indicative Only - Meals and Prices Subject to Change</div>
                    </MenuSide2Warper>
                   
                </Side2Warper>

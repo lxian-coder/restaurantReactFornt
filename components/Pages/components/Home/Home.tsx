@@ -10,6 +10,7 @@ import home1 from '../../../../assets/home1.jpeg';
 import Home1 from './components/Homep1/Homep1';
 import Home2 from './components/Homep2/Homep2';
 
+
 const VideoContainer = styled.div`
   position: relative;
   overflow: hidden;

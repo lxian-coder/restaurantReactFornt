@@ -9,6 +9,7 @@ const BannerBG = styled.div`
    top:0;
    display: flex;
    justify-content:center;
+   height: 54px;
    `;
 const BannerText = styled.div`
    display: flex;
@@ -37,7 +38,7 @@ const Banner = (props:{onclick:()=>void})=>{
  
     return <BannerBG>
               <BannerText>
-                  <Link style={{color:"white"}} to="/ABOUT" >
+                  <Link style={{color:"white"}} to="/CONTACT" >
                   <Text onClick={(event)=>{
                       event.preventDefault;
                       props.onclick()}}>Book a Table</Text>

@@ -7,13 +7,13 @@ import CSSCONST from '../../../../cssConst';
 export const Side1Warper = styled.aside`
           font-family: ${CSSCONST.FONT_RAKKAS};
           font-size: 48px;
-          width: 200px;
+          width: 29%;
 
           display: flex;
           justify-content: flex-start;
           margin-right: 40px;
           flex-direction: column;
-       
+          z-index: 1;
 
           @media only screen and (max-width: 961px){
            display: none;

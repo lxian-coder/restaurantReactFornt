@@ -8,6 +8,9 @@ const FooterContainer = styled.footer`
       background-color: ${CSSCONST.BLUE};
       width: 100%;
       margin-top: 3%;
+      z-index: 10;
+      overflow:hidden;
+      position: relative;
 `;
 
 const Footer = ()=>{

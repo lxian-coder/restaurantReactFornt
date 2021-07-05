@@ -21,6 +21,7 @@ const TextTitle = styled.div`
 const Text = styled.div`
      font-size: 24px;
      font-family: ${CSSCONST.FONT_ALATA};
+     text-align: justify;
 `;
 
 
