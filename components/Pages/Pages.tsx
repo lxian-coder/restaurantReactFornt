@@ -12,13 +12,10 @@ import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const PageWarper = styled.div`
      display: flex;
-     width: min(100%,1100px);
      justify-content: center;
      z-index: 0;
      margin-top: 15.625rem;
        width:100%;
-       margin-right: 1rem;
-       margin-left: 1rem;
        overflow-x: hidden;
      `;
 

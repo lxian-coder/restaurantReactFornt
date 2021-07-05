@@ -68,6 +68,7 @@ module.exports = {
         contentBase: './dist',  // live server
         historyApiFallback: true,  // for react router
       //  port:9000,
+      // 解决 react router 没法刷新的问题
       historyApiFallback: true,
       contentBase: './',
       hot: true

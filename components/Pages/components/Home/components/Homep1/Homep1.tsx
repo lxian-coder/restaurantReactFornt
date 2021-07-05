@@ -12,16 +12,19 @@ const HomeP1Container = styled.div`
      width: 100%;
      font-family: ${CSSCONST.FONT_ZILLA};
      justify-content: space-between;
+     
      @media only screen and (max-width:700px){
        flex-wrap:wrap;
        justify-content: center;
+     
      }
 `;
 const Side1Warper = styled.div`
     display: flex;
     justify-content: center;
-    width: 45%;
+ 
     justify-content: flex-start;
+    min-width: 310px;
 `;
 const Side1 = styled.div`
     display: flex;
@@ -39,20 +42,32 @@ const TextArea = styled.div`
 `;
 const Side2Warper = styled.div`
     display: flex;
-    width: 45%;
     justify-content: flex-end;
+    @media only screen and (max-width:700px){
+       margin-left: 0;
+       margin-top: 5%;
+       height: min-content;
+     }
 `;
 const Side2 = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: flex-end;
+justify-content:center;
+margin-left: 20%;
 box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
+@media only screen and (max-width:700px){
+       margin-left: 0;
+     }
+
 
 `;
 
 const PhotoLine = styled.div`
    display: flex;
    width: 100%;
+   @media only screen and (max-width:700px){
+      max-height: 13.2rem ;
+     }
 `;
 const Photo1 =styled.img`
    width:30% ;
@@ -60,12 +75,15 @@ const Photo1 =styled.img`
 `;
 const Photo2 = styled.img`
      width: 70%;
+    
 `;
 const Photo3 = styled.img`
       width: 60%;
+     
 `;
 const Photo4 = styled.img`
       width: 40%;
+     
 `;
 const Home1 = ()=>{
 

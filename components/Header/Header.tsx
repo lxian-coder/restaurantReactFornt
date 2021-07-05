@@ -9,7 +9,6 @@ const HeaderWarper = styled.header`
    position: fixed;
    z-index: 10;
    top: 0%;
-   margin:auto;
    width: 100%;
 `;
 

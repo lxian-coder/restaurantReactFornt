@@ -1,11 +1,16 @@
 import React from 'react';
 import styled,{css} from 'styled-components';
+import Zmage from 'react-zmage';
 
 
 
 export const Line = styled.hr`
    margin-top: 3.125rem;
    margin-bottom: 3.125rem;
+   @media only screen and (max-width:700px){
+    margin-top: 2rem;
+   margin-bottom: 2rem;
+     }
 `;
 
 
@@ -19,6 +24,9 @@ export const PageContainer = styled.div`
     width: min(100%,68.75rem);
     display: flex;
     justify-content: space-between;
+    margin-left: 2%;
+    margin-right:2%;
+   
  
     @media only screen and (max-width: 961px){
         display: flex;

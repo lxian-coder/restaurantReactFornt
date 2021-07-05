@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, Component} from 'react';
 import styled,{css} from 'styled-components';
 import CSSCONST from '../../../../cssConst';
 import {Side1Warper} from '../Side1/Side1';
@@ -115,19 +115,18 @@ const LiLine =styled.li`
 `;
 const PriceWarper = styled.div`
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    width: 10%;
+    min-width: 5.125rem;
+    margin-left: 13%;
 
 `;
 const Price1Warper = styled.div`
-       width:25px;
-       display: flex;
-       justify-content: flex-start;
+    
 `;
 
 const Price2Warper = styled.div`
-    width: 50px;
-    display: flex;
-    justify-content: flex-start;
+
     
 `;
 const MenuSide2Warper =styled.div`
@@ -165,16 +164,18 @@ justify-content: space-between;
 const BottleGlassWarper = styled.div<Props2>`
 display: ${p=>p.showOrNot};
 justify-content: space-between;
+width: 12%;
+min-width: 5.125rem;;
 `;
 const BottleWarper = styled.img`
-  width: 1.875rem;
-  height: 35px;
-  margin-left: 17px;
+  max-height: 35px;
+  margin-left: 1.0625rem;
 `;
 const SpaceAdd = styled.div<Props3>`
  display: ${p=>p.show};
  width: 100%;
  height: 4.375rem;
+ 
 `;
 
 const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)=>void}) =>{
@@ -202,8 +203,12 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
        };
      }
    }
+    
 
-    return <MenuContainer>
+   
+
+    return <PageContainer>
+             <MenuContainer>
                <Side1Warper>
                  <div style={{position:'fixed'}}>
                  <Title>Menus.</Title>
@@ -270,11 +275,10 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
                    </MenuSide2Warper>
                   
                </Side2Warper>
-    </MenuContainer>;
+    </MenuContainer>
+    </PageContainer>;
 }
 
 export default Menu;    
 
-function restaurantProject(arg0: string, restaurantProject: any, any: any) {
-  throw new Error('Function not implemented.');
-}
+

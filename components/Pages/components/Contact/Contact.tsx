@@ -15,16 +15,23 @@ const ContactContainer = styled.div`
 
 `;
 const TextContainer = styled.div`
-display: flex;
+  display: flex;
   justify-content: space-between;
    width: 100%;
+   flex-basis: 100%;
    font-family:${CSSCONST.FONT_RAKKAS};
    font-size: 1.375rem;
+`;
+const TextContainer1 = styled.div`
+     display: flex;
+     flex-direction: column;
+    flex-basis: 100%;
 `;
 const TextContainer2 = styled.div`
      display: flex;
      flex-direction: column;
-     height: 100%;
+     flex-basis: 100%;
+
 `;
 const Title = styled.div`
    font-size: 1.375rem;
@@ -70,7 +77,7 @@ const  Contact = ()=>{
                 <Line></Line>
                 <TextContainer>
                 
-                <TextContainer2>
+                <TextContainer1>
                     <EntryWarper>
                     <Title>Reservations:<br/>(03) 6375 1121</Title>
                     </EntryWarper>
@@ -86,7 +93,7 @@ const  Contact = ()=>{
                      <Content>Lunch<br />11:00am-3:00am<br/>Wednesday to Sunday</Content>
                      </EntryWarper>
                      <Content>Dinner<br />5:00am-Late<br/>Tuesday to Saturday</Content>
-                </TextContainer2>
+                </TextContainer1>
                 <TextContainer2>
                     <EntryWarper>
                     <Title>Social:</Title>

@@ -19,29 +19,28 @@ const NavBarCenter = styled.div`
        justify-content: center;
        background-color: white;
        opacity: 0.9;
+
   `;
 const NavBarContainer = styled.div`
       width: min(100%,1100px);
-  
-       margin-right: 1rem;
-       margin-left: 1rem;
-    
- 
 
 `;
 const NavBarContainerSpace = styled.div`
      display: flex;
      justify-content: space-between;
      max-width:100% ;
-     @media only screen and (max-width: 800px){
-      display: flex;
-      flex-direction: column;
+     @media only screen and (max-width: 960px){
+        display: flex;
+        flex-direction: column;
+        margin-right: 2%;
+        margin-left: 2%;
     }
+
 `;
 const Logo = styled.img`
    max-width: 182px;
    max-height: 139px;
-   @media only screen and (max-width: 961px){
+   @media only screen and (max-width: 960px){
         display: none;
     }
     
@@ -50,7 +49,6 @@ const Warper = styled.div`
    display: flex;
    justify-content: center;
    height: 100%;
-    width: auto;
    margin-left: 0.5rem;
 
 `;
@@ -100,6 +98,7 @@ const SmallScreenWarper =styled.div`
         display: flex;
         justify-content: space-between;
         height: 80px;
+    
 
        @media only screen and (min-width:961px){
            display: none;
