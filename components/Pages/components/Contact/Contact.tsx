@@ -36,15 +36,23 @@ const EntryWarper = styled.div`
      margin-bottom: 25px;
 `;
 const GoogleWarper = styled.div`
- width: 100%;
-  height: 31rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
+ 
 `;
 const GoogleMap = styled.iframe`
+position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  border: none;
-
-  box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
+   border:0;
+   box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 `;
 const ImgContainer = styled.img`
       width: 100%;
