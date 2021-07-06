@@ -205,7 +205,6 @@ const Menu =(props:{onclick:()=>void,currentMeal:string,changeMeal:(meal:string)
    }
     
 
-   
 
     return <PageContainer>
              <MenuContainer>

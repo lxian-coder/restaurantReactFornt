@@ -12,15 +12,17 @@ const Title = styled.div`
    padding-bottom: 40px;
    font-size: 48px;
    text-align: justify;
-
 `;
 const TitleText = styled.div`
    font-family: ${CSSCONST.FONT_RAKKAS};
    font-size:26px;
    text-align: justify;
-   width: 72%;
-
-  
+   
+  width:min(70%,220px);
+`;
+const SideFixed = styled.div`
+     position: fixed;
+     width: 29%;
 `;
 const TextTile = styled.div`
   font-family: ${CSSCONST.FONT_ALATA};
@@ -60,10 +62,13 @@ const TextDelete = styled.div`
 const Events = ()=>{
       return <PageContainer>
                <Side1Warper>
-                      <Title>Upcoming Events.</Title>
+                     <SideFixed>
+                     <Title>Upcoming <br/>Events.</Title>
                       <TitleText>
                        See what’s happening at Sealife! Check back often to learn about exciting menu updates, new wine, special events, and more.
                       </TitleText>
+                     </SideFixed>
+
                </Side1Warper>
               <Side2Warper>
                    <FetchData></FetchData>
@@ -72,7 +77,6 @@ const Events = ()=>{
                      See Life & Drink It
                    </TitleDelete>
                    <TextDelete>
-                 
 
 Event Details<br/>
 Friday, 10 September 2021<br/>

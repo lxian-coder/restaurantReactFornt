@@ -29,14 +29,14 @@ const Pages =(props:{changePage:(pageName:string)=>void,changeMeal:(meal:string)
             <Switch>
             <PageWarper>
               <Route path="/" exact component={Home}></Route> 
-              <Route path="/HOME" exact component={Home}></Route>  
-              <Route path="/CONTACT" exact component={Contact}></Route>
-              <Route path="/ABOUT" exact component={About}></Route>   
+              <Route path="/HOME"  component={Home}></Route>  
+              <Route path="/CONTACT"  component={Contact}></Route>
+              <Route path="/ABOUT"  component={About}></Route>   
              
-              <Route path="/MENUS" exact><Menu currentMeal={props.currentMeal} changeMeal={props.changeMeal} onclick={()=>{
+              <Route path="/MENUS" ><Menu currentMeal={props.currentMeal} changeMeal={props.changeMeal} onclick={()=>{
                    props.changePage("CONTACT");
               }} /></Route>
-               <Route path="/UPCOMING EVENTS" exact component={EVENTS}></Route>  
+               <Route path="/UPCOMING EVENTS"  component={EVENTS}></Route>  
         </PageWarper>
             </Switch>
             </ScrollToTop>
