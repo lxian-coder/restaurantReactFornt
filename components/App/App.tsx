@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Pages from '../Pages/Pages';
 import styled,{css} from 'styled-components';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router,HashRouter} from 'react-router-dom';
 import {PAGE} from '../../PAGE';
 import {MEAL} from '../../MEAL';
 
@@ -53,11 +53,11 @@ class App extends React.Component<Props,State> {
    const { dropMenu, currentPage,currentMeal } = this.state;
 
     return  <div>
-          <Router >
+          <HashRouter >
           <Header dropMenu={dropMenu} toggleDropMenu={this.toggleDropMenu} changePage={this.changePage} currentPage={currentPage}></Header>
                <Pages changePage={this.changePage} ></Pages>
               <Footer />
-          </Router>
+          </HashRouter>
        </div>
  }
 }
