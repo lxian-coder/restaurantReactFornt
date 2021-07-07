@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Pages from '../Pages/Pages';
 import styled,{css} from 'styled-components';
-import {BrowserRouter as Router,} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import {PAGE} from '../../PAGE';
 import {MEAL} from '../../MEAL';
 
@@ -35,7 +35,7 @@ class App extends React.Component<Props,State> {
 
        this.toggleDropMenu = this.toggleDropMenu.bind(this);
        this.changePage = this.changePage.bind(this);
-       this.changeMeal = this.changeMeal.bind(this);
+     
     }
 
     toggleDropMenu(dropMenu:boolean){
@@ -48,18 +48,14 @@ class App extends React.Component<Props,State> {
           currentPage: pageName,
       })
     }
-    changeMeal(meal:string){
-      this.setState({
-          currentMeal:meal ,
-      })
-    }
+
  render(){
    const { dropMenu, currentPage,currentMeal } = this.state;
 
     return  <div>
-          <Router>
+          <Router >
           <Header dropMenu={dropMenu} toggleDropMenu={this.toggleDropMenu} changePage={this.changePage} currentPage={currentPage}></Header>
-               <Pages changePage={this.changePage} currentMeal={currentMeal}  changeMeal = {this.changeMeal}></Pages>
+               <Pages changePage={this.changePage} ></Pages>
               <Footer />
           </Router>
        </div>

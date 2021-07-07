@@ -70,7 +70,7 @@ module.exports = {
       //  port:9000,
       // 解决 react router 没法刷新的问题
       historyApiFallback: true,
-      contentBase: './',
+      contentBase: ':/',
       hot: true
       },
   

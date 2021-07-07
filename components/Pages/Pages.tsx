@@ -22,7 +22,7 @@ const PageWarper = styled.div`
      }
      `;
 
-const Pages =(props:{changePage:(pageName:string)=>void,changeMeal:(meal:string)=>void,currentMeal:string})=>{
+const Pages =(props:{changePage:(pageName:string)=>void})=>{
      
    return (
             <ScrollToTop >
@@ -33,7 +33,7 @@ const Pages =(props:{changePage:(pageName:string)=>void,changeMeal:(meal:string)
               <Route path="/CONTACT"  component={Contact}></Route>
               <Route path="/ABOUT"  component={About}></Route>   
              
-              <Route path="/MENUS" ><Menu currentMeal={props.currentMeal} changeMeal={props.changeMeal} onclick={()=>{
+              <Route path="/MENUS" ><Menu  onclick={()=>{
                    props.changePage("CONTACT");
               }} /></Route>
                <Route path="/UPCOMING EVENTS"  component={EVENTS}></Route>  
