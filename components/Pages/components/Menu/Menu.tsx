@@ -142,8 +142,6 @@ const Menu =(props:{onclick:()=>void}) =>{
      setItems(data.data);
      console.log(data);
    }
-
-
     return <PageContainer>
              <MenuContainer>
                 <MenuBar></MenuBar>
