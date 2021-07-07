@@ -12,29 +12,31 @@ type Props={};
 type State={
    dropMenu:boolean;
    currentPage:string;
-   currentMeal:string;
+
 };
-let url = window.location.pathname;
-console.log("haha："+url);
+const url = window.location.href;
 const map = new Map();
-map.set('/HOME',PAGE.HOME);
-map.set('/CONTACT',PAGE.CONTACT);
-map.set('/MENUS',PAGE.MENUS);
-map.set('/UPCOMING%20',PAGE.UPCOMMING);
-map.set('/ABOUT',PAGE.ABOUT);
+map.set('http://localhost:8080/#/HOME',PAGE.HOME);
+map.set('http://localhost:8080/#/CONTACT',PAGE.CONTACT);
+map.set('http://localhost:8080/#/MENUS',PAGE.MENUS);
+map.set('http://localhost:8080/#/UPCOMING%20',PAGE.UPCOMMING);
+map.set('http://localhost:8080/#/ABOUT',PAGE.ABOUT);
+map.set('http://localhost:8080/#/',PAGE.HOME);
 
 class App extends React.Component<Props,State> {
-    constructor(props:any){
+   
+   constructor(props:any){
        super(props);
 
        this.state = {
           dropMenu:false,
           currentPage:map.get(url),
-          currentMeal:MEAL.BREAKFAST,
+   
        };
 
        this.toggleDropMenu = this.toggleDropMenu.bind(this);
        this.changePage = this.changePage.bind(this);
+       this.checkURL = this.checkURL.bind(this);
      
     }
 
@@ -43,14 +45,24 @@ class App extends React.Component<Props,State> {
           dropMenu:dropMenu,
        })
     }
+    
     changePage(pageName:string){
       this.setState({
           currentPage: pageName,
       })
+
     }
+  
+    checkURL(){
+      const url = window.location.href;
+      console.log("haha："+url);
+      return url;
+   }
+
+
 
  render(){
-   const { dropMenu, currentPage,currentMeal } = this.state;
+   const { dropMenu, currentPage } = this.state;
 
     return  <div>
           <HashRouter >
