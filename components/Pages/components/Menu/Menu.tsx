@@ -108,7 +108,28 @@ const SpaceAdd = styled.div<Props3>`
  width: 100%;
  height: 4.375rem;
 `;
+const ImgStartWraper = styled.img`
+width: 50%;
+position: absolute;
+top: 13.5%;
+left: 40%;
+z-index: 0;
+`;
 
+const ImgMiddleWraper = styled.img`
+width: 40%;
+position: absolute;
+top: 51%;
+left: 48%;
+z-index: 0;
+`;
+const ImgEndWraper = styled.img`
+width: 37%;
+position: absolute;
+top: 91%;
+left: 53%;
+z-index: 0;
+`;
 const Menu =(props:{onclick:()=>void}) =>{
    　const [items, setItems] = useState([]);
 
@@ -128,6 +149,9 @@ const Menu =(props:{onclick:()=>void}) =>{
                 <MenuBar></MenuBar>
                <Side2Warper >
                  <MenuSide2Warper>
+                 <ImgStartWraper src={menu1}></ImgStartWraper>
+                   <ImgMiddleWraper src={menu2}></ImgMiddleWraper>
+                   <ImgEndWraper src={menu3}></ImgEndWraper>
 
                  {CATEGORY.map(({key,value})=>{
                   return  <UL>
