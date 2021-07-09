@@ -124,7 +124,8 @@ const  Contact = ()=>{
                
                <Line />
                  <ImgContainer  src={ContactMap}></ImgContainer>
-
+                  <br/>
+                  <br/>
             </Side2Warper>
  </PageContainer>
             
