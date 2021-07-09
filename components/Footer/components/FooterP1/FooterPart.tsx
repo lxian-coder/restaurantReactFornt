@@ -26,7 +26,7 @@ const FooterPartWarper2 = styled.div`
    justify-content: space-between;
    position:relative;
    @media only screen and (max-width:800px){
-         display: none;
+       flex-direction:column;
       }
  
 `;
@@ -39,6 +39,10 @@ const Address = styled.div`
      color:white;
      font-size: 1.125rem;
      margin-top: 10%;
+     @media only screen and (max-width:800px){
+         margin-top: 5%;
+         font-size: .9rem;
+      }
 `;
 const Side1Warper = styled.div`
    display: flex;
@@ -55,23 +59,38 @@ const Side2Warper = styled.div`
 
 const Side2Name = styled.div`
    font-size: 1.125rem;
+   @media only screen and (max-width:800px){
+   
+         font-size: .9rem;
+      }
    ;
 `;
 
 const Side2Content= styled.div`
      font-size : .875rem;
-
-`;
+     @media only screen and (max-width:800px){
+   
+   font-size: .7rem;
+}`;
 const BottomText = styled.div`
        font-size : .875rem;
        display: flex;
        justify-content: center;
        margin-top: 3%;
+       @media only screen and (max-width:800px){
+   
+   font-size: .6rem;
+}
 `;
 const Warper = styled.div`
 font-size: 18px;
 font-family:${CSSCONST.FONT_RAMMETTO};
 color: white ;
+@media only screen and (max-width:800px){
+   
+   font-size: .7rem;
+}
+
 `;
 const FloatText = styled.div`
       display: flex;
@@ -82,6 +101,27 @@ const FloatText = styled.div`
       bottom: 30%;
       @media only screen and (max-width:1000px){
          display: none;
+         
+      }
+  
+`;
+const Br = styled.br`
+   @media only screen and (max-width:800px){
+         display: none;
+      }
+`;
+const FloatText2 = styled.div`
+      display: flex;
+      font-size: 16px;
+      font-family:${CSSCONST.FONT_RAMMETTO};
+      right:4%;
+      bottom: 30%;
+      @media only screen and (min-width:801px){
+         display: none;
+      }
+      @media only screen and (max-width:800px){
+         display: flex;
+         font-size: 11px;
       }
 `;
 
@@ -92,11 +132,11 @@ return <FooterPartWarper>
            <FooterPartWarper2>
            <Side1Warper>
             <Name>Sealife <br/> Restaurant</Name>
-            <Address>1 Tasman Hwy,<br/> Bicheno TAS 7215</Address>
+            <Address>1 Tasman Hwy,<br/> Bicheno TAS 7215<br/><br/></Address>
        </Side1Warper>
 
        <Side2Warper>
-          <Side2Name>Opening Hours<br/><br/></Side2Name>
+          <Side2Name>Opening Hours<Br></Br><br/></Side2Name>
           <Side2Content>
            <Side2Name>Breakfast</Side2Name>
           8:00am-11:00pm <br />
@@ -110,22 +150,26 @@ return <FooterPartWarper>
         <Side2Content>
         <Side2Name>Dinner</Side2Name>
         5:00pm-Late<br/>
-        Tuesday to Saturday<br/>
+        Tuesday to Saturday<br/><br/>
        </Side2Content>
        </Side2Warper>
        <Warper>
-            <div>Reservation<br/><br/></div>
-             <div>(03) 6375 1121</div>
+            <div>Reservation<Br></Br><Br></Br></div>
+             <div>(03) 6375 1121</div><br></br>
             </Warper>
            <Warper>
-           <div>Social<br/><br/></div>
+           <div>Social<Br></Br><Br></Br></div>
            <a style={{color:"white"}} href="https://www.facebook.com/SealifeBicheno"><div>Facebook<br/></div></a>
            <a style={{color:"white"}}  href="https://www.tripadvisor.com.au/Restaurant_Review-g261650-d728229-Reviews-Sealife_Bicheno-Bicheno_Glamorgan_Spring_Bay_Tasmania.html"><div>Trip Advisor</div></a>
-           </Warper>
+           <br/></Warper>
           <FloatText>
       Morning and Afternoon Tea Available <br/>
      Takeaway Coffee Available at Window
    </FloatText>
+   <FloatText2>
+      Morning and Afternoon Tea Available.
+     Takeaway Coffee Available at Window.
+   </FloatText2>
 
            </FooterPartWarper2>
      

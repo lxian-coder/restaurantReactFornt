@@ -18,7 +18,7 @@ const NavBarCenter = styled.div`
        display: flex;
        justify-content: center;
        background-color: white;
-       opacity: 0.9;
+       opacity: 0.97;
 
   `;
 const NavBarContainer = styled.div`
@@ -85,7 +85,7 @@ const Name = styled.div`
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      font-family: ${CSSCONST.FONT_ZILLA};
+      font-family: ${CSSCONST.FONT_NORICAN};
       font-size: 28px;
       height: 80px;
     }
@@ -98,8 +98,6 @@ const SmallScreenWarper =styled.div`
         display: flex;
         justify-content: space-between;
         height: 80px;
-    
-
        @media only screen and (min-width:961px){
            display: none;
        }
@@ -140,12 +138,9 @@ const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void
               <NavBarContainerSpace>
               <Logo />
               <SmallScreenWarper>
-              <Button dropMenu={props.dropMenu} toggleDropMenu={props.toggleDropMenu}></Button>
-               <Name>SEA LIFE</Name>
-               <Warper>
-               <a href="https://www.facebook.com/SealifeBicheno"> <LittleLogo src={littleLogo1}></LittleLogo></a>
-              <a href="https://www.tripadvisor.com.au/Restaurant_Review-g261650-d728229-Reviews-Sealife_Bicheno-Bicheno_Glamorgan_Spring_Bay_Tasmania.html"> <LittleLogo src={littleLogo2}></LittleLogo></a>
-               </Warper>
+              
+               <Name>SeaLife Restaurant</Name>
+               <Button dropMenu={props.dropMenu} toggleDropMenu={props.toggleDropMenu}></Button>
               </SmallScreenWarper>
 
                <Navbar show = {showOrNot}>

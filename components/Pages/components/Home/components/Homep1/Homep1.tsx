@@ -50,46 +50,45 @@ const Side2Warper = styled.div`
     display: flex;
     justify-content: flex-end;
     @media only screen and (max-width:700px){
-       margin-left: 0;
-       margin-top: 5%;
-       height: min-content;
+  
+       margin-top: 7%;
+ 
+       justify-content: center;
      }
 `;
 const Side2 = styled.div`
 display: flex;
 flex-direction: column;
 justify-content:center;
+
 margin-left: 20%;
 box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
 @media only screen and (max-width:700px){
        margin-left: 0;
+       width: 90%;
      }
-
-
 `;
 
 const PhotoLine = styled.div`
    display: flex;
+   justify-content: center;
    width: 100%;
    @media only screen and (max-width:700px){
       max-height: 13.2rem ;
+  
      }
 `;
 const Photo1 =styled.img`
    width:30% ;
-
 `;
 const Photo2 = styled.img`
      width: 70%;
-    
 `;
 const Photo3 = styled.img`
       width: 60%;
-     
 `;
 const Photo4 = styled.img`
       width: 40%;
-     
 `;
 const Home1 = ()=>{
 
@@ -104,7 +103,7 @@ return <HomeP1Container>
            </TextArea>
         </Side1>
        </Side1Warper>
-        
+
         <Side2Warper>
         <Side2>
              <PhotoLine>

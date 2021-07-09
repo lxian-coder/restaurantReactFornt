@@ -18,7 +18,7 @@ const PageWarper = styled.div`
        width:100%;
        overflow-x: hidden;
      @media only screen and (max-width:700px){
-       margin-top:12rem;
+       margin-top:10rem;
      }
      `;
 

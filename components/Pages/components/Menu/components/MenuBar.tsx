@@ -3,6 +3,29 @@ import styled,{css} from 'styled-components';
 import CSSCONST from '../../../../../cssConst';
 import {Side1Warper} from '../../Side1/Side1';
 import {MEAL} from '../../../../../MEAL';
+import {Link} from 'react-router-dom';
+
+export const ID = [{
+    key:'Breakfast',
+    value:"breakfast",
+  },{
+     key:'Lunch',
+     value:"lunch"
+  },{
+    key:'Entrée',
+    value:'entrée'
+  },{
+    key:'Children',
+    value:'children',
+  },{
+    key:'Daily Desserts',
+    value:'desserts',
+  },{
+    key:'Sparkling & Rose Wine',
+    value:'SparklingWine',
+  }
+  ];
+
 
 interface Props2 {
     active:string;
@@ -31,37 +54,68 @@ const BookTable = styled.div`
    z-index: 1;
 `;
 
-function scrollToAnchor(anchorName:string){
+  type Props={
+      onclick:()=>void,
+   };
+  type State={
+      currentMeal:string,
+      breakfastPosition:number,
+      LunchPosition:Number;
+  };
+
+let a = 1;
+function findElementPosition1(anchorName:string){
     if(anchorName){
       let anchorElement = document.getElementById(anchorName);
       console.log(anchorElement);
       if(anchorElement) {
         let anchorPosition = anchorElement.getBoundingClientRect().top + window.pageYOffset;
+        console.log("BoundingRect : "+anchorElement.getBoundingClientRect().top);
+        console.log("PageYOffset : "+ window.pageYOffset);
         console.log("anchorPosition: "+ anchorPosition);
-         let offsetPosition = anchorPosition - 270;
-       window.scrollTo({top:offsetPosition, behavior:'smooth'});
+         let finalPosition = anchorPosition - 260;
+         console.log("FinalPostion : "+finalPosition);
+        return finalPosition;
       };
     }
   }
-  type Props={ };
-  type State={
-      currentMeal:string,
-  };
-
-
 
 class MenuBar extends React.Component<Props,State>{
-   
+
     constructor(props:any){
         super(props);
         this.state={
             currentMeal:MEAL.BREAKFAST,
+            breakfastPosition:this.findElementPosition("Lunch"),
+            LunchPosition:22
         }
         this.changeMeal = this.changeMeal.bind(this);
         this.getScrollTop = this.getScrollTop.bind(this);
+        this.scrollToAnchor = this.scrollToAnchor.bind(this);
+        this.setLunchState = this.setLunchState.bind(this);
     
     }
+  
+   findElementPosition(anchorName:string){
+    if(anchorName){
+      let anchorElement = document.getElementById(anchorName);
+      console.log(anchorElement);
+      if(anchorElement) {
+        let anchorPosition = anchorElement.getBoundingClientRect().top + window.pageYOffset;
+        console.log("BoundingRect : "+anchorElement.getBoundingClientRect().top);
+        console.log("PageYOffset : "+ window.pageYOffset);
+        console.log("anchorPosition: "+ anchorPosition);
+         let finalPosition = anchorPosition - 260;
+         console.log("FinalPostion : "+finalPosition);
+        return finalPosition;
+      };
+    }
+  }
 
+   scrollToAnchor(anchorName:string){
+    const finalPosition =this.findElementPosition(anchorName);
+    window.scrollTo({top:finalPosition, behavior:'smooth'});
+   }
 
    changeMeal(meal:string){
             this.setState({
@@ -89,52 +143,62 @@ class MenuBar extends React.Component<Props,State>{
       if(top >= 4297){
         this.changeMeal(MEAL.REFRESHMENTS);
       }
-      
     }
+    setLunchState(position:number){
+        this.setState({
+            LunchPosition:position,
+        });
+    };
+    
    componentDidMount(){
+     
+  
         window.addEventListener('scroll',this.getScrollTop);
-       
    }
    componentWillUnmount(){
        window.removeEventListener("scroll",this.getScrollTop);
    }
 
     render(){
+        a = findElementPosition1("Lunch");
+        console.log("postion Lunch haha:"+a);
           return <Side1Warper>
            <div style={{position:'fixed'}}>
            <Title>Menus.</Title>
            <Ul>
              <Li onClick={(evt)=>{
-               scrollToAnchor("Breakfast");
+            // this.scrollToAnchor("Breakfast");
                this.changeMeal(MEAL.BREAKFAST);
              }} active={this.state.currentMeal === MEAL.BREAKFAST ? "black" : CSSCONST.GREY }>Breakfast</Li>
              <Li onClick={(evt)=>{
-               scrollToAnchor("Lunch");
+               this.scrollToAnchor("Lunch");
                this.changeMeal(MEAL.LUNCH);
              }} active={this.state.currentMeal === MEAL.LUNCH ? "black" : CSSCONST.GREY }>Lunch</Li>
              <Li onClick={(evt)=>{
-               scrollToAnchor("Entrée");
+               this.scrollToAnchor("Entrée");
                this.changeMeal(MEAL.DINNER);
              }}active={this.state.currentMeal === MEAL.DINNER ? "black" : CSSCONST.GREY }>Dinner</Li>
              <Li onClick={(evt)=>{
-               scrollToAnchor("Children");
+               this.scrollToAnchor("Children");
                this.changeMeal(MEAL.CHILDREN);
              }} active={this.state.currentMeal === MEAL.CHILDREN ? "black" : CSSCONST.GREY }>Children</Li>
              <Li onClick={(evt)=>{
                this.changeMeal(MEAL.DESSERTS);
-               scrollToAnchor("Daily Desserts");
+               this.scrollToAnchor("Daily Desserts");
              }} active={this.state.currentMeal === MEAL.DESSERTS ? "black" : CSSCONST.GREY }>Desserts</Li>
           
             <Li onClick={(evt)=>{
                this.changeMeal(MEAL.REFRESHMENTS);
-               scrollToAnchor("Sparkling & Rose Wine");
+               this.scrollToAnchor("Sparkling & Rose Wine");
              }}active={this.state.currentMeal === MEAL.REFRESHMENTS ? "black" : CSSCONST.GREY }>Refreshments</Li>
          
-
+             <Link style={{color:"black"}} to="/CONTACT"> <BookTable onClick={(evt)=>{this.props.onclick()}}>  Book a Table</BookTable> </Link> 
            </Ul>
            </div>
          </Side1Warper>
+       
     }
+  
 }
 
-export default MenuBar; 
+export default MenuBar;

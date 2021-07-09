@@ -11,6 +11,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-bottom: 3%;
+
 `;
 const Side1 =styled.div`
   display: flex;
@@ -29,17 +30,34 @@ const Side2 =styled.div`
        display: flex;
        justify-content: center;
        width: 130%;
+@media only screen and (max-width:1359px){
+      width: 110%;
+}
+@media only screen and (max-width:1154px){
+      flex-direction: column;
+      width: 90%;
+     justify-content: flex-start;
+
+}
 `;
 
 const ImgContainer = styled.div`
   width:100%;
-
   display: flex;
   justify-content: center;
+  @media only screen and (max-width:1154px){
+      margin-bottom: 12px;
+      max-height: 35rem;
+ 
+}
 `;
 const ImgWarper= styled.img`
-   width: 80%;
+   width:80%;
    box-shadow:0px 10px 6px 5px rgb(0 0 0 / 20%);
+   @media only screen and (max-width:1154px){
+      width: 100%;
+
+}
 `;
 
 const Homep2 = ()=>{

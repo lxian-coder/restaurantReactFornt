@@ -144,7 +144,7 @@ const Menu =(props:{onclick:()=>void}) =>{
    }
     return <PageContainer>
              <MenuContainer>
-                <MenuBar></MenuBar>
+                <MenuBar onclick={props.onclick}></MenuBar>
                <Side2Warper >
                  <MenuSide2Warper>
                  <ImgStartWraper src={menu1}></ImgStartWraper>
