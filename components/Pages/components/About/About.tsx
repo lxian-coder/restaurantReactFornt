@@ -20,16 +20,21 @@ const Title = styled.div`
 const TextTitle = styled.div`
    font-size: 36px;
    font-family: ${CSSCONST.FONT_ALATA};
+ 
    @media only screen and (max-width:700px){
       font-size: 26px;
+      margin-left: 5%;
      }
 `;
 const Text = styled.div`
      font-size: 24px;
      font-family: ${CSSCONST.FONT_ALATA};
      text-align: justify;
+    
      @media only screen and (max-width:700px){
       font-size: 16px;
+      margin-left: 5%;
+     margin-right: 5%;
      }
 `;
 
@@ -46,7 +51,7 @@ const About =()=>{
                  <Title>The appearance of the Sealife restaurant now.</Title>
                  <Line></Line>
                  <TextTitle>A little bit about us</TextTitle>
-                 <Text><br/><br/>Overlooking the gorgeous Waubs Bay sits the Sealife Centre Restaurant.
+                 <Text><br/>Overlooking the gorgeous Waubs Bay sits the Sealife Centre Restaurant.
                       First established in 1978 as an aquarium for local fish species such as crayfish, octopus, 
                       sharks and even an eel housed in 24 tanks and a large central tank. The early 90s brought 
                       growth for Sealife with the addition of the glass fronted restaurant area, new kitchen and 

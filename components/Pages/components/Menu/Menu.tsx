@@ -114,6 +114,10 @@ position: absolute;
 top: 13.5%;
 left: 40%;
 z-index: 0;
+@media only screen and (max-width:380px){
+  top: 14%;
+
+}
 `;
 
 const ImgMiddleWraper = styled.img`
@@ -122,6 +126,10 @@ position: absolute;
 top: 51%;
 left: 48%;
 z-index: 0;
+@media only screen and (max-width:380px){
+  top: 52%;
+
+}
 `;
 const ImgEndWraper = styled.img`
 width: 37%;
@@ -160,8 +168,7 @@ const Menu =(props:{onclick:()=>void}) =>{
                               <BottleWarper src={glass}></BottleWarper>
                               <BottleWarper src={bottle}></BottleWarper>
                             </BottleGlassWarper>
-                          </CategoryBottleWarper>
-                        
+                            </CategoryBottleWarper>
                             {items.map((ele)=>{
                             if(ele.category === value){
                               return  <LiLine>

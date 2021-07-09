@@ -172,12 +172,10 @@ return <FooterPartWarper>
    </FloatText2>
 
            </FooterPartWarper2>
-     
            <BottomText>©Sealife Restaurant 2021 </BottomText>
            </FooterWarper1>
 
 </FooterPartWarper>
-
 
 }
      
