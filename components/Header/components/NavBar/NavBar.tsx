@@ -7,7 +7,6 @@ import littleLogo1 from '../../../../assets/littleLogo1.png';
 import littleLogo2 from '../../../../assets/littleLogo2.png';
 import LittleLogo from './components/LittleLogo/LittleLogo';
 import Button from './components/Button/Button';
-import Pages from '../../../Pages/Pages';
 import { PAGE } from '../../../../PAGE';
 
 interface Props {
@@ -101,7 +100,6 @@ const SmallScreenWarper =styled.div`
        @media only screen and (min-width:961px){
            display: none;
        }
-
 `;
 const DisapearWhenSmall = styled.div`
   @media only screen and (max-width:960px){
@@ -126,7 +124,7 @@ const ITEMS = [{
     tabPage:PAGE.CONTACT,
 },]
 
-const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void,changePage:(pageName:string)=>void,currentPage:String})=>{
+const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void,currentPage:String})=>{
   let showOrNot;
   if(props.dropMenu){
       showOrNot = 'flex';
@@ -146,7 +144,7 @@ const NavBar = (props:{dropMenu:boolean, toggleDropMenu:(dropMenu:boolean)=>void
                <Navbar show = {showOrNot}>
                {ITEMS.map((item) => (
                    <Item active={props.currentPage === item.tabPage} key={item.key}  
-                   onclick={()=>{ props.changePage(item.tabPage);
+                   onclick={()=>{
                                    props.toggleDropMenu(false);
                    }}>{item.tabPage}</Item>
                ))}

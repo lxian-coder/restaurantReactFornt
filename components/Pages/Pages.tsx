@@ -6,8 +6,9 @@ import About from './components/About/About';
 import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
 import EVENTS from './components/Events/Events';
-import { Switch, Route, } from 'react-router-dom';
+import { Switch, Route, withRouter, RouteComponentProps} from 'react-router-dom';
 import ScrollToTop from '../../ScrollToTop/ScrollToTop';
+import { PAGE } from '../../PAGE';
 
 
 const PageWarper = styled.div`
@@ -22,25 +23,65 @@ const PageWarper = styled.div`
      }
      `;
 
-const Pages =(props:{changePage:(pageName:string)=>void})=>{
-     
-   return (
-            <ScrollToTop >
-            <Switch>
-            <PageWarper>
-              <Route path="/" exact component={Home}></Route> 
-              <Route path="/HOME"  component={Home}></Route>  
-              <Route path="/CONTACT"  component={Contact}></Route>
-              <Route path="/ABOUT"  component={About}></Route>   
+interface Props extends RouteComponentProps{
+   changePage:(s:string)=>void;
+};
+interface State {
+  name:string;
+}
+
+let UNLISTEN : any;
+
+const map = new Map();
+map.set('/HOME',PAGE.HOME);
+map.set('/CONTACT',PAGE.CONTACT);
+map.set('/MENUS',PAGE.MENUS);
+map.set('/UPCOMING EVENTS',PAGE.UPCOMMING);
+map.set('/ABOUT',PAGE.ABOUT);
+map.set('/',PAGE.HOME);
+class Pages extends React.Component<Props,State>{
+
+   constructor(props:any){
+     super(props);
+     this.changePageWithURL = this.changePageWithURL.bind(this);
+   }
+  changePageWithURL(){
+    let URL = this.props.history.location.pathname;
+    this.props.changePage(map.get(URL));
+    console.log("++++++++"+URL);
+ 
+  }
+  componentDidMount(){
+    // fix the route problem
+    UNLISTEN = this.props.history.listen(route =>{
+      this.changePageWithURL();
+    })
+  }
+  componentWillUnmount(){
+    UNLISTEN && UNLISTEN();
+  }
+
+
+  render(){
+    return (
+      <ScrollToTop >
+      <Switch>
+      <PageWarper>
+        <Route path="/" exact component={Home}></Route> 
+        <Route path="/HOME"  component={Home}></Route>  
+        <Route path="/CONTACT"  component={Contact}></Route>
+        <Route path="/ABOUT"  component={About}></Route>   
+       
+        <Route path="/MENUS" ><Menu  onclick={()=>{
+             this.props.changePage("CONTACT");
              
-              <Route path="/MENUS" ><Menu  onclick={()=>{
-                   props.changePage("CONTACT");
-              }} /></Route>
-               <Route path="/UPCOMING EVENTS"  component={EVENTS}></Route>  
-        </PageWarper>
-            </Switch>
-            </ScrollToTop>
-   );
+        }} /></Route>
+         <Route path="/UPCOMING EVENTS"  component={EVENTS}></Route>  
+  </PageWarper>
+      </Switch>
+      </ScrollToTop>
+);
 
 }
-export default Pages;
+}
+export default withRouter(Pages);

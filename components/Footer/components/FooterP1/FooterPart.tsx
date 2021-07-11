@@ -154,11 +154,11 @@ return <FooterPartWarper>
        </Side2Content>
        </Side2Warper>
        <Warper>
-            <div>Reservation<Br></Br><Br></Br></div>
+            <Side2Name>Reservation<Br></Br><Br></Br></Side2Name>
              <div>(03) 6375 1121</div><br></br>
             </Warper>
            <Warper>
-           <div>Social<Br></Br><Br></Br></div>
+           <Side2Name>Social<Br></Br><Br></Br></Side2Name>
            <a style={{color:"white"}} href="https://www.facebook.com/SealifeBicheno"><div>Facebook<br/></div></a>
            <a style={{color:"white"}}  href="https://www.tripadvisor.com.au/Restaurant_Review-g261650-d728229-Reviews-Sealife_Bicheno-Bicheno_Glamorgan_Spring_Bay_Tasmania.html"><div>Trip Advisor</div></a>
            <br/></Warper>
