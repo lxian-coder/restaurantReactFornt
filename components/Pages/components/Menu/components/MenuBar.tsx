@@ -59,25 +59,32 @@ const BookTable = styled.div`
    };
   type State={
       currentMeal:string,
-      breakfastPosition:number,
-      LunchPosition:Number;
+ 
   };
 
 let a = 1;
+let lunchPosition:number;
+let dinnerPosition:number;
+let childrenPosition:number;
+let dessertPosition:number;
+let refreshmentsPosition:number;
 function findElementPosition1(anchorName:string){
     if(anchorName){
       let anchorElement = document.getElementById(anchorName);
       console.log(anchorElement);
       if(anchorElement) {
         let anchorPosition = anchorElement.getBoundingClientRect().top + window.pageYOffset;
-        console.log("BoundingRect : "+anchorElement.getBoundingClientRect().top);
-        console.log("PageYOffset : "+ window.pageYOffset);
-        console.log("anchorPosition: "+ anchorPosition);
          let finalPosition = anchorPosition - 260;
-         console.log("FinalPostion : "+finalPosition);
         return finalPosition;
       };
     }
+  }
+  function fillPosition(){
+    lunchPosition = findElementPosition1('Lunch') ;
+    dinnerPosition = findElementPosition1('Entrée');
+    childrenPosition = findElementPosition1('Children') ;
+    dessertPosition = findElementPosition1('Daily Desserts') ;
+    refreshmentsPosition = findElementPosition1('Sparkling & Rose Wine');
   }
 
 class MenuBar extends React.Component<Props,State>{
@@ -86,34 +93,17 @@ class MenuBar extends React.Component<Props,State>{
         super(props);
         this.state={
             currentMeal:MEAL.BREAKFAST,
-            breakfastPosition:this.findElementPosition("Lunch"),
-            LunchPosition:22
         }
         this.changeMeal = this.changeMeal.bind(this);
         this.getScrollTop = this.getScrollTop.bind(this);
         this.scrollToAnchor = this.scrollToAnchor.bind(this);
-        this.setLunchState = this.setLunchState.bind(this);
+       
     
     }
   
-   findElementPosition(anchorName:string){
-    if(anchorName){
-      let anchorElement = document.getElementById(anchorName);
-      console.log(anchorElement);
-      if(anchorElement) {
-        let anchorPosition = anchorElement.getBoundingClientRect().top + window.pageYOffset;
-        console.log("BoundingRect : "+anchorElement.getBoundingClientRect().top);
-        console.log("PageYOffset : "+ window.pageYOffset);
-        console.log("anchorPosition: "+ anchorPosition);
-         let finalPosition = anchorPosition - 260;
-         console.log("FinalPostion : "+finalPosition);
-        return finalPosition;
-      };
-    }
-  }
 
    scrollToAnchor(anchorName:string){
-    const finalPosition =this.findElementPosition(anchorName);
+    const finalPosition = findElementPosition1(anchorName);
     window.scrollTo({top:finalPosition, behavior:'smooth'});
    }
 
@@ -123,48 +113,43 @@ class MenuBar extends React.Component<Props,State>{
             });
     };
     getScrollTop(){
-        let top =  window.pageYOffset + 270 ;
+        let top =  window.pageYOffset  ;
         console.log("The top is:"+ top);
-        if(top<1086){
+        if(top<lunchPosition){
             this.changeMeal(MEAL.BREAKFAST);
         } 
-         if(top >= 1080 && top <= 2016 ){
+         if(top >= lunchPosition && top < dinnerPosition ){
           this.changeMeal(MEAL.LUNCH);
         } 
-        if(top >= 2017 && top <= 3368 ){
+        if(top >= dinnerPosition && top < childrenPosition ){
             this.changeMeal(MEAL.DINNER);
           }
-        if(top >= 3369 && top <= 3894 ){
+        if(top >= childrenPosition && top < dessertPosition ){
             this.changeMeal(MEAL.CHILDREN);
         }
-        if(top >= 3895 && top <= 4296 ){
+        if(top >= dessertPosition && top < refreshmentsPosition ){
           this.changeMeal(MEAL.DESSERTS);
       }
-      if(top >= 4297){
+      if(top >= refreshmentsPosition){
         this.changeMeal(MEAL.REFRESHMENTS);
       }
     }
-    setLunchState(position:number){
-        this.setState({
-            LunchPosition:position,
-        });
-    };
+
     
    componentDidMount(){
-     
-  
+        window.addEventListener('scroll',fillPosition);
+   
         window.addEventListener('scroll',this.getScrollTop);
    }
    componentWillUnmount(){
        window.removeEventListener("scroll",this.getScrollTop);
+       window.removeEventListener('scroll',fillPosition)
    }
 
     render(){
-        a = findElementPosition1("Lunch");
-        console.log("postion Lunch haha:"+a);
           return <Side1Warper>
            <div style={{position:'fixed'}}>
-           <Title>Menus.</Title>
+           <Title>Menuss.</Title>
            <Ul>
              <Li onClick={(evt)=>{
             // this.scrollToAnchor("Breakfast");

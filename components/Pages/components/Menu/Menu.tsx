@@ -146,7 +146,7 @@ const Menu =(props:{onclick:()=>void}) =>{
   },[])
 
    const getMenus = async()=>{
-     const data = await  axios.get('http://Sealife-env.eba-8gr2micd.ap-southeast-2.elasticbeanstalk.com/menu');
+     const data = await  axios.get('https://test.sealiferestaurantbicheno.com/menu');
      setItems(data.data);
      console.log(data);
    }

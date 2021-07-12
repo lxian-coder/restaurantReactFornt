@@ -6,11 +6,7 @@ import styled,{css} from 'styled-components';
 import {HashRouter,withRouter,RouteComponentProps} from 'react-router-dom';
 import {PAGE} from '../../PAGE';
 import {MEAL} from '../../MEAL';
-
-
-
 interface Props{
-
 
 };
 
@@ -18,10 +14,6 @@ type State={
    dropMenu:boolean;
    currentPage:string;
 }
-
-
-
-
 
 
 class App extends React.Component<Props,State> {

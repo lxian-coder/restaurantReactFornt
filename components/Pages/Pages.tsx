@@ -20,7 +20,7 @@ const PageWarper = styled.div`
        overflow-x: hidden;
      @media only screen and (max-width:700px){
        margin-top:10rem;
-     }
+}
      `;
 
 interface Props extends RouteComponentProps{
@@ -53,6 +53,7 @@ class Pages extends React.Component<Props,State>{
   }
   componentDidMount(){
     // fix the route problem
+    this.changePageWithURL();
     UNLISTEN = this.props.history.listen(route =>{
       this.changePageWithURL();
     })
@@ -60,7 +61,7 @@ class Pages extends React.Component<Props,State>{
   componentWillUnmount(){
     UNLISTEN && UNLISTEN();
   }
-
+  
 
   render(){
     return (
