@@ -62,7 +62,7 @@ const BookTable = styled.div`
  
   };
 
-let a = 1;
+
 let lunchPosition:number;
 let dinnerPosition:number;
 let childrenPosition:number;
@@ -149,10 +149,10 @@ class MenuBar extends React.Component<Props,State>{
     render(){
           return <Side1Warper>
            <div style={{position:'fixed'}}>
-           <Title>Menuss.</Title>
+           <Title>Menus.</Title>
            <Ul>
              <Li onClick={(evt)=>{
-            // this.scrollToAnchor("Breakfast");
+             this.scrollToAnchor("Breakfast");
                this.changeMeal(MEAL.BREAKFAST);
              }} active={this.state.currentMeal === MEAL.BREAKFAST ? "black" : CSSCONST.GREY }>Breakfast</Li>
              <Li onClick={(evt)=>{
