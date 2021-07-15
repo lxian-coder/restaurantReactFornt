@@ -138,6 +138,13 @@ top: 91%;
 left: 53%;
 z-index: 0;
 `;
+interface menuData{
+  id:number,
+  category:string,
+  description:string,
+  price:string,
+  price2:string,
+}
 const Menu =(props:{onclick:()=>void}) =>{
    　const [items, setItems] = useState([]);
 
@@ -147,8 +154,13 @@ const Menu =(props:{onclick:()=>void}) =>{
 
    const getMenus = async()=>{
      const data = await  axios.get('https://test.sealiferestaurantbicheno.com/menu');
+     data.data.sort(sortID);
      setItems(data.data);
      console.log(data);
+     function sortID(a:menuData,b:menuData) {
+      return a.id - b.id;
+    }
+
    }
     return <PageContainer>
              <MenuContainer>
