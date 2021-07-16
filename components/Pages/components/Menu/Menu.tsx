@@ -136,7 +136,7 @@ const Menu =(props:{onclick:()=>void}) =>{
   },[])
 
    const getMenus = async()=>{
-     const data = await  axios.get('https://test.sealiferestaurantbicheno.com/menu');
+     const data = await  axios.get(CSSCONST.BACK_URL+'menu');
      data.data.sort(sortID);
      setItems(data.data);
      console.log(data);
