@@ -65,29 +65,7 @@ const MenuSide2Warper =styled.div`
   position: relative;
 `;
 
-const Img1Wraper = styled.img`
-width: 50%;
-position: absolute;
-top: 13.5%;
-left: 40%;
-z-index: 0;
 
-`;
-
-const Img2Wraper = styled.img`
-width: 40%;
-position: absolute;
-top: 51%;
-left: 48%;
-z-index: 0;
-`;
-const Img3Wraper = styled.img`
-width: 37%;
-position: absolute;
-top: 91%;
-left: 53%;
-z-index: 0;
-`;
 const CategoryBottleWarper = styled.div`
 display:flex ;
 justify-content: space-between;
@@ -138,6 +116,11 @@ top: 91%;
 left: 53%;
 z-index: 0;
 `;
+const DesMenu = styled.div`
+   /* white-space: pre-wrap;
+     word-wrap: break-word;
+    text-align: justify; */
+`;
 interface menuData{
   id:number,
   category:string,
@@ -184,7 +167,7 @@ const Menu =(props:{onclick:()=>void}) =>{
                             {items.map((ele)=>{
                             if(ele.category === value){
                               return  <LiLine>
-                              <div  key={ele.id}>{ele.description}</div>
+                              <DesMenu  key={ele.id}>{ele.description}</DesMenu>
                               <PriceWarper>
                                <Price2Warper>{ele.price2==='' ? '':'$'}{ele.price2}</Price2Warper>
                                <Price1Warper key={ele.id} style={isNaN(ele.price) ? {width:"10.625",justifyContent:"flex-end",whiteSpace:"nowrap"}:{}}>{ele.price === "Price Upon Request" || ele.price ==="" ? "":"$"}{ele.price}</Price1Warper>

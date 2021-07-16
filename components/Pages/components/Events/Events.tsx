@@ -71,12 +71,10 @@ class Events extends React.Component<Props,State>{
          <Side2Warper>
               <FetchData ></FetchData>
              
-          
-
              <Line></Line>
               <TextTile>Group dining and Functions</TextTile>
               <Text>At Sealife we are available for private functions such as Weddings, Birthday Celebrations and any other important occasion. We also provide a Degustation Option for smaller groups giving a more private and personal experience.
-<br/><br/>To learn more about our fabulous food and beverages whilst taking in the magnificent view of Waubs Bay, Phone us on (03)63751121.<br/><br/></Text>
+                    <br/><br/>To learn more about our fabulous food and beverages whilst taking in the magnificent view of Waubs Bay, Phone us on (03)63751121.<br/><br/></Text>
          </Side2Warper>
  </PageContainer>
 

@@ -11,10 +11,7 @@ const GREEN =" rgb(4, 170, 109)";
 const FetchWarper = styled.div`
  width: 100%;
  font-family: ${CSSCONST.FONT_ALATA};
- @media only screen and (max-width:700px){
-      margin-left: 5%;
-      margin-right: 5%;
-     }
+
 `;
 
 const Title = styled.pre`
@@ -28,6 +25,10 @@ const Title = styled.pre`
     font-family: ${CSSCONST.FONT_ALATA};
      @media only screen and (max-width:700px){
       font-size: 26px;
+  
+      margin-left: 5%;
+      margin-right: 5%;
+     
      }
 `;
 
@@ -40,6 +41,8 @@ const Text = styled.pre`
   font-size: 22px;
   @media only screen and (max-width:700px){
       font-size: 16px;
+      margin-left: 5%;
+      margin-right: 5%;
      }
 `;
 
@@ -128,7 +131,6 @@ componentDidUpdate(){
 }
 render(){
     return <FetchWarper>
-           
              <Title>{this.state.stateData.title}</Title>
              <Text>{this.state.stateData.description}</Text> 
            </FetchWarper>
