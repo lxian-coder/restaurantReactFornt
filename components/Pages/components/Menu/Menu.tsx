@@ -50,7 +50,7 @@ const LiLine =styled.li`
 const PriceWarper = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 10%;
+    width: 20%;
     min-width: 5.125rem;
     margin-left: 13%;
 
