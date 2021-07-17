@@ -117,9 +117,9 @@ left: 53%;
 z-index: 0;
 `;
 const DesMenu = styled.div`
-   /* white-space: pre-wrap;
-     word-wrap: break-word;
-    text-align: justify; */
+    white-space: pre-wrap;
+/* word-wrap: break-word; */
+    text-align: justify; 
 `;
 interface menuData{
   id:number,
