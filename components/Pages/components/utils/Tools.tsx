@@ -1,6 +1,6 @@
 import React from 'react';
 import styled,{css} from 'styled-components';
-import Zmage from 'react-zmage';
+
 
 
 
@@ -23,14 +23,14 @@ export const ImgContainer = styled.img`
 export const PageContainer = styled.div`
     width: min(100%,68.75rem);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 2%;
     margin-right:2%;
    
  
     @media only screen and (max-width: 961px){
         display: flex;
-        justify-content: center;
+       
     }
 `;
 
