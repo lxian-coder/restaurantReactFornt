@@ -126,6 +126,7 @@ interface menuData{
   description:string,
   price:string,
   price2:string,
+  index:number,
 }
 const Menu =(props:{onclick:()=>void}) =>{
    　const [items, setItems] = useState([]);
@@ -136,11 +137,11 @@ const Menu =(props:{onclick:()=>void}) =>{
 
    const getMenus = async()=>{
      const data = await  axios.get(CSSCONST.BACK_URL+'menu');
-     data.data.sort(sortID);
+     data.data.sort(sortIndex);
      setItems(data.data);
      console.log(data);
-     function sortID(a:menuData,b:menuData) {
-      return a.id - b.id;
+     function sortIndex(a:menuData,b:menuData) {
+      return a.index - b.index;
     }
 
    }

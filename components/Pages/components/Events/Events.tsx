@@ -17,8 +17,6 @@ const TitleText = styled.div`
    font-family: ${CSSCONST.FONT_RAKKAS};
    font-size:26px;
    text-align: justify;
-
-   
   width:min(70%,220px);
 `;
 const SideFixed = styled.div`
