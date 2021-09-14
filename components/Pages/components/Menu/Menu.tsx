@@ -134,17 +134,23 @@ const Menu =(props:{onclick:()=>void}) =>{
    useEffect(()=>{
        getMenus();
   },[])
-
+  
+  function sortIndex(a:menuData,b:menuData) {
+    console.log(a.index);
+    
+    return a.index - b.index;
+  }
    const getMenus = async()=>{
-     const data = await  axios.get(CSSCONST.BACK_URL+'menu');
-     data.data.sort(sortIndex);
-     setItems(data.data);
-     console.log(data);
-     function sortIndex(a:menuData,b:menuData) {
-      return a.index - b.index;
-    }
-
+     await  axios.get(CSSCONST.BACK_URL+'menu').then((res)=>{
+       
+			res.data.sort(sortIndex);
+			 setItems(res.data)
+      
+       
+     })
    }
+
+
     return <PageContainer>
              <MenuContainer>
                 <MenuBar onclick={props.onclick}></MenuBar>
