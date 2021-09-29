@@ -93,12 +93,12 @@ const  Contact = ()=>{
                      </EntryWarper>
                      <EntryWarper>
                      <Title>Opening Hours:</Title>
-                      <Content>Breakfast<br />8:00am-11:00am<br/>Wednesday to Sunday</Content>
+                      <Content>Breakfast<br />8:00am-11:00am<br/>Thursday to Monday</Content>
                      </EntryWarper>
                      <EntryWarper>
-                     <Content>Lunch<br />11:00am-3:00am<br/>Wednesday to Sunday</Content>
+                     <Content>Lunch<br />11:00am-3:00am<br/>Thursday to Monday</Content>
                      </EntryWarper>
-                     <Content>Dinner<br />5:00am-Late<br/>Tuesday to Saturday</Content>
+                     <Content>Dinner<br />5:00am-Late<br/>Thursday to Sunday</Content>
                 </TextContainer1>
                 <TextContainer2>
                     <EntryWarper>
